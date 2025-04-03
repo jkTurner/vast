@@ -1,0 +1,99 @@
+.shimmerButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    transform: skewX(-20deg);
+    transition: all 0.3s ease-in-out;
+    /* filter: blur(2px); */
+  }
+  
+  .shimmerButton:hover::before {
+    left: 125%;
+    transition: left 0.6s ease-in-out;
+  }
+  
+/* .logoHover {
+    transition: letter-spacing 0.3s ease, color 0.3s ease;
+}
+
+.logoHover:hover {
+    letter-spacing: 2px;
+    color: var(--color-accent);
+} */
+ 
+.logoHover {
+    position: relative;
+    display: inline-block;
+    font-weight: var(--weight-extrabold);
+    background: linear-gradient(
+        to right,
+        var(--color-accent) 0%,
+        var(--color-accent) 50%,
+        var(--color-primary) 50%,
+        var(--color-primary) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.6s ease;
+  }
+  
+.logoHover:hover {
+    background-position: 0 0;
+}
+  
+
+.logoText {
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.logoText:hover {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary);
+}
+
+.logoSweep {
+    position: relative;
+    display: inline-block;
+    font-weight: var(--weight-extrabold);
+    color: var(--color-primary); 
+    transition: color 0.1s ease-in;
+  }
+  
+  .logoSweep::before {
+    content: 'VAST'; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+      var(--color-primary) 0%,
+      var(--color-accent) 50%,
+      var(--color-primary) 100%
+    );
+    background-size: 300% 100%;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.8s ease-out;
+    pointer-events: none;
+    opacity: 0;
+  }
+  
+  .logoSweep:hover::before {
+    background-position: 100% 0;
+    opacity: 1;
+  }
+  

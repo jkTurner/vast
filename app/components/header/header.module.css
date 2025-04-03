@@ -1,0 +1,124 @@
+/* .navContainer {
+    width: 100%;
+} */
+
+.navList {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+    font-size: var(--size-xs);
+    font-weight: var(--weight-normal);
+    /* padding-left: 24px; */
+    padding-right: 24px;
+}
+.navList:last-child {
+    padding-right: 0;
+}
+
+.navList a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navList a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .navList a:hover::after {
+    transform: scaleX(1);
+  }
+
+
+  /* .mobileMenuContainer {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 100%;
+    height: 64px;
+    padding-left: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-bgContent);
+    font-weight: var(--weight-light);
+    transition: all 0.3s ease-in-out;
+    z-index: 50;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .mobileMenuHidden {
+    opacity: 0;
+    transform: translateY(-1rem);
+    pointer-events: none;
+  } */
+
+  .mobileMenuContainer {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 100%;
+    height: 64px;
+    padding-left: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-weight: var(--weight-light);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 50;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .mobileMenuHidden {
+    opacity: 0;
+    transform: translateY(-1rem);
+    pointer-events: none;
+  }
+  
+  /* Offset each one */
+  .menuItem1 {
+    top: 120px;
+    transition-delay: 0s;
+  }
+  
+  .menuItem2 {
+    top: 184px; /* 120 + 64 */
+    transition-delay: 0.1s;
+  }
+
+  .menuItem3 {
+    top: 248px; /* 120 + 64*2 */
+    transition-delay: 0.2s;
+  }
+  
+  .menuItem4 {
+    top: 312px; /* 120 + 64*3 */
+    transition-delay: 0.3s;
+  }
+  .menuItem5 {
+    top: 376px; /* 120 + 64*4 */
+    transition-delay: 0.4s;
+    background-color: var(--primaryAdd);
+  }
+
+  .mobileMenuContainer:hover {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in, color 1s ease;
+  }
