@@ -34,7 +34,7 @@ const Header = () => {
 
         {/* desktop nav */}
         <div className="hidden md:flex gap-xl items-center justify-center">
-          <Navbar />
+          <Navbar color="primary" />
           <Link href="/sign-in">
             <MainButton name = "Sign in" />
           </Link>
