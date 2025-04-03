@@ -73,11 +73,12 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div className={styles.bottomSection}>
-                <div className="w-[50%]">
+                <div className="md:w-[50%]">
                     <Navbar color="textKill" showHome={true} />
                 </div>
-                <div>
+                <div className="flex flex-col items-center md:items-start">
                     <p className="text-textKill font-extralight text-sm">©Vast Original Inc. All rights reserved</p>
+                    <p className="text-textKill font-extralight text-sm">By JK Turner Fullstack</p>
                 </div>
             </div>
         </div>

@@ -46,6 +46,7 @@
 .bottomSection {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: var(--breakpoint-xl);
     padding-left: var(--spacing-sm);
@@ -65,12 +66,13 @@
         margin-top: var(--spacing-md);
     }
 
-    .subscribe {
-        /* margin-top: var(--spacing-md); */
-    }
+    /* .subscribe {
+        margin-top: var(--spacing-md);
+    } */
 
     .bottomSection {
         flex-direction: column;
         gap: var(--spacing-md);
+        
     }
 }
