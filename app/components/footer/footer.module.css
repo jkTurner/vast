@@ -73,6 +73,6 @@
     .bottomSection {
         flex-direction: column;
         gap: var(--spacing-md);
-        
+        align-items: start;
     }
 }
