@@ -83,6 +83,7 @@
     color: var(--primary);
     font-weight: var(--weight-light);
     font-size: var(--size-sm);
+    /* overflow-x: hidden; */
   }
   p {
     color: var(--textLight);

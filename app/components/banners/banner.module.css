@@ -24,6 +24,7 @@
     flex-direction: column;
     width: 50%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .rightColumnImageContainer {
@@ -114,6 +115,7 @@
     opacity: 0;
     transform: scale(1.05);
     animation: zoomIn 1.2s ease-out forwards;
+    overflow-x: hidden;
 }
   
 @keyframes zoomIn {

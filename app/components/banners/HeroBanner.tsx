@@ -24,7 +24,7 @@ const HeroBanner = () => {
 
                 {/* right column */}
                 <div className={styles.rightColumn}>
-                <div className={`${styles.rightColumnImageContainer} ${styles.imageZoom}`}>
+                    <div className={`${styles.rightColumnImageContainer} ${styles.imageZoom}`}>
                         <Image
                             src="/images/sample-image-001.jpg"
                             alt="Hero Image"
