@@ -13,12 +13,12 @@ const TestimonialCardServer: React.FC<Props> = ({ userName = "Unknown Hero", ima
         <div className="flex flex-col w-full items-center">
 
             {/* Top Section */}
-            <div className="flex flex-col gap-xs p-sm w-full bg-primary md:h-[220px]">
+            <div className="flex flex-col gap-xs p-sm w-full bg-primary h-[200px] md:h-[220px]">
                 <div>
                     <QuoteOpenIcon color="var(--secondary)" />
                 </div>
 
-                <p className="text-secondary px-sm">{LoremText.set20}</p>
+                <p className="text-secondary px-sm line-clamp-4">{LoremText.set20}</p>
 
                 <div className="self-end">
                     <QuoteCloseIcon color="var(--secondary)" />
