@@ -29,3 +29,9 @@ export const AvatarImage: Record<string, string> ={
     image002: "/images/users/avatar-002.jpg",
     image003: "/images/users/avatar-003.jpg",
 }
+
+export const ModelImage: Record<string, string> ={
+    image001: "/images/models/model-001.png",
+    image002: "/images/models/model-002.png",
+    image003: "/images/models/model-003.png",
+}

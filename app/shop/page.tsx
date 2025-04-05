@@ -1,11 +1,13 @@
+import ProductCarousel from "../components/ui/carousel/ProductCarousel";
 
 
 const ShopPage = () => {
+
     return (
-        <div>
-            <h1>Shop Page</h1>
-            <div className="h-lvh" />
-        </div>
+        <>
+            <ProductCarousel />
+            <div className="h-[500px]" />
+        </>
     )
 }
 
