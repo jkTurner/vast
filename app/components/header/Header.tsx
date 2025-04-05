@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <div className="container px-sm">
-      <div className="flex w-full justify-between items-center py-md h-[120px]">
+      <div className="flex w-full justify-between items-center py-md h-[80px] md:h-[120px]">
         
         <VastLogo />
 

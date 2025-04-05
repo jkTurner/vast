@@ -67,7 +67,7 @@
 
   .mobileMenuContainer {
     position: absolute;
-    top: 120px;
+    top: 80px;
     right: 0;
     width: 100%;
     height: 64px;
@@ -92,26 +92,26 @@
   
   /* Offset each one */
   .menuItem1 {
-    top: 120px;
+    top: 80px;
     transition-delay: 0s;
   }
   
   .menuItem2 {
-    top: 184px; /* 120 + 64 */
+    top: 144px; /* 120 + 64 */
     transition-delay: 0.1s;
   }
 
   .menuItem3 {
-    top: 248px; /* 120 + 64*2 */
+    top: 208px; /* 120 + 64*2 */
     transition-delay: 0.2s;
   }
   
   .menuItem4 {
-    top: 312px; /* 120 + 64*3 */
+    top: 272px; /* 120 + 64*3 */
     transition-delay: 0.3s;
   }
   .menuItem5 {
-    top: 376px; /* 120 + 64*4 */
+    top: 336px; /* 120 + 64*4 */
     transition-delay: 0.4s;
     background-color: var(--primaryAdd);
   }
