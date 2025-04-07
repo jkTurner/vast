@@ -35,3 +35,11 @@ const PostPage = async ({ params }: PageProps) => {
 };
 
 export default PostPage;
+
+
+export async function generateStaticParams() {
+    return BlogPostData.map((post) => ({
+      posts: post.slug,
+    }));
+  }
+  
