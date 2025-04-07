@@ -1,16 +1,18 @@
 import { BlogPostData } from "@/data/mockup/MockupData";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 interface PageProps {
-  params: { posts: string };
+  params: {
+    posts: string;
+  };
 }
 
 const PostPage = async ({ params }: PageProps) => {
-  const slug = params.posts;
-  const post = BlogPostData.find((item) => item.slug === slug);
+  const post = BlogPostData.find((item) => item.slug === params.posts);
 
   if (!post) {
-    return <div className="p-md text-center text-accent">Post Not Found</div>;
+    notFound(); // Use Next.js built-in 404 handler
   }
 
   return (
