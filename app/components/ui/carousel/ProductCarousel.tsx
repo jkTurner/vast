@@ -5,7 +5,7 @@ import { ArrowDownIcon, ArrowUpIcon } from "@/assets/Icons";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import Slide from "./Slide";
-import { ProductInfo } from "@/data/mockup/MockupText";
+import { ProductData } from "@/data/mockup/MockupData";
 
 const ProductCarousel = () => {
 
@@ -42,7 +42,7 @@ const ProductCarousel = () => {
             <div className="embla__viewport mx-auto h-[75vh] max-h-[80vh] md:h-[500px] w-full max-w-[1280px]" ref={emblaRef}>
                 <div className="embla__container h-full">
 
-                    {ProductInfo.map((item, index) => (
+                    {ProductData.map((item, index) => (
                         <div key={item.id} className="embla__slide flex items-center justify-center">
                             <Slide 
                                 name={item.name} 

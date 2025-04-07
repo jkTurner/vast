@@ -1,4 +1,4 @@
-import { AddressText, SupportEmail } from "@/data/mockup/MockupText";
+import { AddressText, SupportEmail } from "@/data/mockup/MockupData";
 import VastLogoFull from "../ui/buttons/VastLogoFull";
 import { FacebookIcon, LineIcon, TwitterIcon, WhatsappIcon } from "@/assets/Icons";
 import MainButton from "../ui/buttons/MainButton";

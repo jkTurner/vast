@@ -1,5 +1,5 @@
 import { BubblePointerIcon, QuoteCloseIcon, QuoteOpenIcon } from "@/assets/Icons";
-import { LoremText } from "@/data/mockup/MockupText";
+import { LoremText } from "@/data/mockup/MockupData";
 import Image from "next/image";
 
 interface TestimonialCardProps {

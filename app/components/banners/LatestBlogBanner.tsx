@@ -1,8 +1,9 @@
-import { LoremText } from "@/data/mockup/MockupText";
+import { LoremText } from "@/data/mockup/MockupData";
 import MainButton from "../ui/buttons/MainButton";
 import Image from "next/image";
 import { BlogImage } from "@/data/mockup/MockupImage";
 import styles from "./banner.module.css"
+import Link from "next/link";
 
 const LatestBlogBanner = () => {
     return (
@@ -26,7 +27,9 @@ const LatestBlogBanner = () => {
                         <div className="h-sm" />
                         <div className="flex gap-sm self-end">
                             <MainButton name="Read More" weight="font-light" />
-                            <MainButton name="View All" weight="font-light" />
+                            <Link href="/blog">
+                                <MainButton name="View All" weight="font-light" />
+                            </Link>
                         </div>
                     </div>
 

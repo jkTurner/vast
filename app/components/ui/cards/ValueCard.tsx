@@ -1,5 +1,5 @@
 import { LaurelWreath } from "@/assets/Icons";
-import { LoremText } from "@/data/mockup/MockupText";
+import { LoremText } from "@/data/mockup/MockupData";
 
 interface ValueCardProps {
     background?: 'bg-primary' | 'bg-accent';

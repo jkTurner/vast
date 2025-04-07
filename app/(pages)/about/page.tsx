@@ -1,12 +1,10 @@
-
-
-const BlogPage = () => {
+const AboutPage = () => {
     return (
         <div>
-            <h1>Blog Page</h1>
+            <h1>About Page</h1>
             <div className="h-lvh" />
         </div>
     )
 }
 
-export default BlogPage;
+export default AboutPage;

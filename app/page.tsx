@@ -2,7 +2,7 @@ import { AvatarImage, ProductImage } from "@/data/mockup/MockupImage";
 import HeroBanner from "./components/banners/HeroBanner";
 import ProductCard from "./components/ui/cards/ProductCard";
 import SectionHeader from "./components/ui/section-header/SectionHeader";
-import { LoremText } from "@/data/mockup/MockupText";
+import { LoremText } from "@/data/mockup/MockupData";
 import ValueCard from "./components/ui/cards/ValueCard";
 import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";

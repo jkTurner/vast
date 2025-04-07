@@ -1,0 +1,23 @@
+.cardImageContainer {
+    position: relative;
+    height: 55%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.contentOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primaryAdd);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm);
+}
+
+.cardGroup:hover .contentOverlay {
+    opacity: 0.85;
+}

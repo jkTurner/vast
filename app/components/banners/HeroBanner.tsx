@@ -1,4 +1,4 @@
-import { LoremText } from "@/data/mockup/MockupText";
+import { LoremText } from "@/data/mockup/MockupData";
 import Image from "next/image";
 import HeroText from "./HeroText";
 import styles from "./banner.module.css"
