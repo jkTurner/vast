@@ -26,7 +26,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, imag
                 />
                 {/* Preview Overlay */}
                 <div className={styles.contentOverlay}>
-                    <p className="absolute w-full p-sm text-secondary">{content}</p>
+                    <p className="text-secondary text-size-sm line-clamp-4 overflow-hidden">{content}</p>
                 </div>
                 <Link href={`/blog/${slug}`} className="absolute inset-0 z-0">
                     <span className="sr-only">View Post</span>
