@@ -11,9 +11,7 @@ const PostPage = ({ params }: PostPageProps) => {
     const post = BlogPostData.find(item => item.slug === slug);
 
     if (!post) {
-        return <div className="p-md text-center text-accent">
-            Post Not Found
-        </div>
+        return <div className="p-md text-center text-accent">Post Not Found</div>
     }
 
     return (
