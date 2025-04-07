@@ -2,16 +2,14 @@ import { BlogPostData } from "@/data/mockup/MockupData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-type Params = {
-  posts: string;
-};
+// Mark the params prop as a promise:
+const PostPage = async ({ params }: { params: Promise<{ posts: string }> }) => {
+  const { posts: slug } = await params;
 
-// ✅ No Promise — `params` is a plain object
-const PostPage = async ({ params }: { params: Params }) => {
-  const post = BlogPostData.find(item => item.slug === params.posts);
+  const post = BlogPostData.find(item => item.slug === slug);
 
   if (!post) {
-    notFound(); // built-in 404 handler
+    notFound();
   }
 
   return (
@@ -28,9 +26,7 @@ const PostPage = async ({ params }: { params: Params }) => {
         />
       </div>
 
-      <div className="text-base text-primary">
-        {post.content}
-      </div>
+      <div className="text-base text-primary">{post.content}</div>
     </div>
   );
 };
