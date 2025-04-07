@@ -2,17 +2,11 @@ import { BlogPostData } from "@/data/mockup/MockupData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-interface PageProps {
-  params: {
-    posts: string;
-  };
-}
-
-const PostPage = async ({ params }: PageProps) => {
+const PostPage = async ({ params }: { params: { posts: string } }) => {
   const post = BlogPostData.find((item) => item.slug === params.posts);
 
   if (!post) {
-    notFound(); // Use Next.js built-in 404 handler
+    notFound();
   }
 
   return (
@@ -35,11 +29,3 @@ const PostPage = async ({ params }: PageProps) => {
 };
 
 export default PostPage;
-
-
-export async function generateStaticParams() {
-    return BlogPostData.map((post) => ({
-      posts: post.slug,
-    }));
-  }
-  
