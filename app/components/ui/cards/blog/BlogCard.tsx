@@ -1,20 +1,21 @@
 import Image from "next/image";
 import MainButton from "../../buttons/MainButton";
 import styles from "./blogcard.module.css"
+import Link from "next/link";
 
 interface BlogCardProps {
     title: string;
+    slug: string;
     image: string;
     excerpt: string;
     content: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({image, title, excerpt, content}) => {
+const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, image }) => {
     return (
         <div className={`flex flex-col w-full h-[480px] bg-primary items-center ${styles.cardGroup}`}>
             
             {/* top section (image) */}
-            {/* <div className="h-[55%] w-full relative"> */}
             <div className={styles.cardImageContainer}>
                 <Image
                     src={image}
@@ -23,10 +24,13 @@ const BlogCard: React.FC<BlogCardProps> = ({image, title, excerpt, content}) => 
                     className="object-cover"
                     priority
                 />
-                {/* <div className="bg-primaryAdd absolute w-full h-full opacity-70"> */}
+                {/* Preview Overlay */}
                 <div className={styles.contentOverlay}>
                     <p className="absolute w-full p-sm text-secondary">{content}</p>
                 </div>
+                <Link href={`/blog/${slug}`} className="absolute inset-0 z-0">
+                    <span className="sr-only">View Post</span>
+                </Link>
             </div>
 
             {/* bottom section (text) */}
@@ -36,7 +40,9 @@ const BlogCard: React.FC<BlogCardProps> = ({image, title, excerpt, content}) => 
                     <p>{excerpt}</p>
                 </div>
                 <div className="self-end">
-                    <MainButton name="Read More" weight="font-light" />
+                    <Link href={`/blog/${slug}`}>
+                        <MainButton name="Read More" weight="font-light" />
+                    </Link>
                 </div>
             </div>
         </div>

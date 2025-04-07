@@ -51,6 +51,7 @@ export const BlogTags = [
   export const BlogPostData = [
 	{
 		title: "Mastering the Slick Back",
+		slug: "mastering-the-slick-back",
 		date: "2024-04-01",
 		excerpt: "Discover how to achieve the perfect slick back hairstyle that never goes out of style.",
 		content:
@@ -62,6 +63,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Matte vs Shine?",
+		slug: "matte-vs-shine",
 		date: "2024-03-28",
 		excerpt: "Choosing between a matte or shiny hair product? Here's what you need to know.",
 		content:
@@ -73,6 +75,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Haircut Styles for Face Shapes",
+		slug: "haircut-styles-for-face-shapes",
 		date: "2024-03-20",
 		excerpt: "Not every haircut fits every face. Here's how to match your style to your face shape.",
 		content:
@@ -84,6 +87,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Daily Hair Routine",
+		slug: "daily-hair-routine",
 		date: "2024-03-15",
 		excerpt: "Low maintenance doesn’t mean looking messy. Here’s a 5-minute daily hair routine for men.",
 		content:
@@ -95,6 +99,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Hair Tips for Humid Days",
+		slug: "hair-tips-for-humid-days",
 		date: "2024-03-10",
 		excerpt: "Humidity is the enemy of style. Learn how to manage frizz and flyaways like a pro.",
 		content:
@@ -106,6 +111,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Sweat-Proof Hair Hacks",
+		slug: "seat-proof-hair-hacks",
 		date: "2024-03-01",
 		excerpt: "Here’s how to keep your hair looking fresh even after a workout.",
 		content:
@@ -117,6 +123,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Volumizing Tricks",
+		slug: "volumizing-tricks",
 		date: "2024-02-22",
 		excerpt: "Fine hair doesn’t have to fall flat. Learn how to add volume that lasts all day.",
 		content:
@@ -128,6 +135,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Barber vs Salon: Where Should You Go?",
+		slug: "barber-vs-salon-where-should-you-go",
 		date: "2024-02-10",
 		excerpt: "Not sure whether to visit a barber or a salon? Here’s how to choose what’s best for you.",
 		content:
@@ -139,6 +147,7 @@ export const BlogTags = [
 	},
 	{
 		title: "Top Travel-Friendly Hair Products",
+		slug: "top-travel-friendly-hair-productds",
 		date: "2024-01-29",
 		excerpt: "Stay styled on the go with these compact and effective travel grooming essentials.",
 		content:
