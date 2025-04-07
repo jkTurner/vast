@@ -1,6 +1,6 @@
 #  VAST Original — Refined Grooming. Elevated Style.
 
-**VAST Original** is a modern eCommerce platform built with [Next.js](https://nextjs.org) and tailored for the bold, style-conscious man.  
+**VAST Original** is a modern eCommerce platform built with [Next.js](https://nextjs.org) by JK Turner and tailored for the bold, style-conscious man.  
 We deliver premium hair styling products and editorial content designed to inspire confidence and elevate daily routines.
 
 ## Tech Stack
