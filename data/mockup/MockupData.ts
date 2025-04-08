@@ -14,6 +14,29 @@ export const AddressText = "116 7, San Klang, San Kamphaeng District, Chiang Mai
 export const SupportEmail = "support@vast-original.com";
 
 
+// User Data
+
+export const UserData = [
+	{
+		id: "user001",
+		name: "Jimmy Brown",
+		image: "/images/users/avatar-001.jpg",
+		comment: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,",
+	},
+	{
+		id: "user002",
+		name: "Samuel Gadhzi",
+		image: "/images/users/avatar-002.jpg",
+		comment: "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
+	},
+	{
+		id: "user003",
+		name: "Michael Fisher",
+		image: "/images/users/avatar-003.jpg",
+		comment: "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. ",
+	}
+]
+
 // Product Data
 export const ProductData = [
 	{
