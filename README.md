@@ -3,6 +3,8 @@
 **VAST Original** is a modern eCommerce platform built with [Next.js](https://nextjs.org) by JK Turner and tailored for the bold, style-conscious man.  
 We deliver premium hair styling products and editorial content designed to inspire confidence and elevate daily routines.
 
+View the live preview at https://vast-eight.vercel.app/
+
 ## Tech Stack
 
 This project was built using a lean, modern tech stack with scalability and styling precision in mind:

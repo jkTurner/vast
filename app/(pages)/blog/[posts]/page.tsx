@@ -25,7 +25,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
         <div className="flex flex-col md:flex-row gap-md w-full max-w-[1280px] px-sm ">
 
             {/* Post Content */}
-            <div className="w-full md:max-w-[70%]">
+            <div className="flex flex-col w-full md:max-w-[70%]">
                 
                 {/* Title & Author */}
                 <div className="flex flex-col mb-sm gap-[8px]">
@@ -37,14 +37,14 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 </div>
         
                 {/* Image */}
-                <div className="w-full h-full max-h-[400px] relative mb">
-                <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    priority
-                    className="object-cover w-full h-full"
-                />
+                <div className="w-full h-[400px] relative mb">
+                    <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        priority
+                        className="object-cover w-full h-full"
+                    />
                 </div>
 
                 {/* Tags */}
@@ -71,9 +71,11 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 {/* Comment Section */}
                 <TextField placeholder="Write your comment..." buttonName="Submit" />
                 
-                {UserData.map((user, index) => (
-                    <CommentBox key={index} name={user.name} image={user.image} comment={user.comment} />
-                ))}
+                <div className="flex flex-col">
+                    {UserData.map((user, index) => (
+                        <CommentBox key={index} name={user.name} image={user.image} comment={user.comment} />
+                    ))}
+                </div>
 
             </div>
 
