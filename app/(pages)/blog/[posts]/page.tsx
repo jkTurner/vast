@@ -59,7 +59,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 </div>
 
                 {/* Comment Count & Share */}
-                <div className="flex justify-between my-sm border-y-1 border-[var(--textKill)] items-center py-xs">
+                <div className="flex justify-between my-md md:my-xl border-y-1 border-[var(--textKill)] items-center py-xs">
                     <span className="text-sm font-medium text-[var(--textLight)]">2 Comments</span>
                     <div className="flex gap-xs">
                         <LineIcon size={34} color="var(--textLight)" />
