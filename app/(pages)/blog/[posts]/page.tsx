@@ -1,4 +1,5 @@
 import TagButton from "@/app/components/ui/buttons/TagButton";
+import BlogCard from "@/app/components/ui/cards/blog/BlogCard";
 import CommentBox from "@/app/components/ui/form/comment/CommentBox";
 import TextField from "@/app/components/ui/form/textfield/TextField";
 import { FacebookIcon, LineIcon, TwitterIcon } from "@/assets/Icons";
@@ -22,7 +23,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
   
     return (
     
-        <div className="flex flex-col md:flex-row gap-md w-full max-w-[1280px] px-sm ">
+        <div className="flex flex-col md:flex-row gap-xl w-full max-w-[1280px] px-sm ">
 
             {/* Post Content */}
             <div className="flex flex-col w-full md:max-w-[70%]">
@@ -60,7 +61,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
 
                 {/* Comment Count & Share */}
                 <div className="flex justify-between my-md md:my-xl border-y-1 border-[var(--textKill)] items-center py-xs">
-                    <span className="text-sm font-medium text-[var(--textLight)]">2 Comments</span>
+                    <span className="text-sm font-medium text-[var(--textLight)]">3 Comments</span>
                     <div className="flex gap-xs">
                         <LineIcon size={34} color="var(--textLight)" />
                         <TwitterIcon size={34} color="var(--textLight)" />
@@ -80,7 +81,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
             </div>
 
             {/* Side Content */}
-            <div className="w-full md:max-w-[30%] h-[500px]">
+            <div className="flex flex-col w-full md:max-w-[30%]">
 
                 {/* Category Section */}
                 <div className="">
@@ -92,7 +93,23 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                     </div>
                 </div> 
 
-                
+                 {/* Popular Posts Section */}
+                 <div className="">
+                    <h4 className="font-bold text-[var(--textLight)]">Popular Reads</h4>
+                    <div className="flex flex-wrap gap-xs my-sm">
+                        {BlogPostData.slice(0, 3).map((post, index) => (
+                            <BlogCard 
+                                key={index} 
+                                title={post.title}
+                                slug={post.slug}
+                                excerpt={post.excerpt}
+                                content={post.content}
+                                image={post.image}    
+                            />
+                        ))}
+                    </div>
+                </div> 
+
             </div>
         </div>
     );
