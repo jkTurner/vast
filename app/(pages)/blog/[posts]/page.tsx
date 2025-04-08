@@ -2,7 +2,7 @@ import TagButton from "@/app/components/ui/buttons/TagButton";
 import CommentBox from "@/app/components/ui/form/comment/CommentBox";
 import TextField from "@/app/components/ui/form/textfield/TextField";
 import { FacebookIcon, LineIcon, TwitterIcon } from "@/assets/Icons";
-import { BlogPostData, UserData } from "@/data/mockup/MockupData";
+import { BlogCategories, BlogPostData, UserData } from "@/data/mockup/MockupData";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 // import Markdown from "react-markdown";
@@ -80,8 +80,19 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
             </div>
 
             {/* Side Content */}
-            <div className="w-full md:max-w-[30%] h-[500px] bg-[var(--primary)]">
+            <div className="w-full md:max-w-[30%] h-[500px]">
 
+                {/* Category Section */}
+                <div className="">
+                    <h4 className="font-bold text-[var(--textLight)]">Categories</h4>
+                    <div className="flex flex-wrap gap-xs my-sm">
+                        {BlogCategories.map((category, index) => (
+                            <TagButton key={index} name={category} />
+                        ))}
+                    </div>
+                </div> 
+
+                
             </div>
         </div>
     );

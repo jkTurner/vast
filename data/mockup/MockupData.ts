@@ -67,9 +67,9 @@ export const ProductData = [
 
 // Blog Tags
 
-export const BlogTags = [
+export const BlogCategories = [
 	"Trips & Tricks", "Classic Looks", "Product Guide", "Haircut & Styling", "Lifestyle", "Haircare", "Essentials"
-  ];
+];
   
   export const BlogPostData = [
 	{
