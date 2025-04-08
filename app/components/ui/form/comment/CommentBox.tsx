@@ -8,7 +8,7 @@ interface CommentBoxProp {
 
 const CommentBox: React.FC<CommentBoxProp> = ({ name="User Name", image = "", comment = "Say something here..."}) => {
     return (
-        <div className="flex bg-[var(--secondary)] mt-sm px-sm py-md gap-sm items-start">
+        <div className="flex flex-col md:flex-row bg-[var(--secondary)] mt-sm px-sm py-md gap-sm items-start">
             <div className="w-2xl h-2xl rounded-full overflow-hidden relative">
                 <Image
                     src={image}

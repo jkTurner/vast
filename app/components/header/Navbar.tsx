@@ -2,11 +2,11 @@ import { Paths } from "@/data/Paths";
 import NavLink from "./NavLink";
 
 interface NavbarProps {
-    color: 'primary' | 'accent' | 'textKill';
+    color: 'var(--primary)' | 'var(--accent)' | 'var(--textKill)';
     showHome?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ color = "primary", showHome = false }) => {
+const Navbar: React.FC<NavbarProps> = ({ color = "var(--primary)", showHome = false }) => {
 
     const links = showHome ? Paths : Paths.slice(1);
 

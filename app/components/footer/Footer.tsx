@@ -75,7 +75,7 @@ const Footer = () => {
             {/* Bottom Section */}
             <div className={styles.bottomSection}>
                 <div className="md:w-[50%]">
-                    <Navbar color="textKill" showHome={true} />
+                    <Navbar color="var(--textKill)" showHome={true} />
                 </div>
                 <div className="flex flex-col items-center md:items-start">
                     <p className="text-[var(--textKill)] font-extralight text-sm">©Vast Original Inc. All rights reserved</p>
