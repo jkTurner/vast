@@ -17,7 +17,7 @@ const SectionHeader:React.FC<SectionHeaderProps> = ({sectionName, showButton = t
                 )}
             </div>
             <div className="h-[1px] w-full">
-                <div className="h-full bg-textKill md:mx-sm" />
+                <div className="h-full bg-[var(--textKill)] md:mx-sm" />
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import styles from "./footer.module.css"
 
 const Footer = () => {
     return (
-        <div className="mt-2xl w-full bg-primary vastPatternPrimary">
+        <div className="mt-2xl w-full bg-[var(--primary)] vastPatternPrimary">
 
             {/* Top Section */}
             <div className={styles.topSection}>
@@ -18,8 +18,8 @@ const Footer = () => {
                     <div className={styles.topLeftSection}>
                         <VastLogoFull />
                         <div>
-                            <p className="text-textKill">{AddressText}</p>
-                            <p className="text-textKill">{SupportEmail}</p>
+                            <p className="text-[var(--textKill)]">{AddressText}</p>
+                            <p className="text-[var(--textKill)]">{SupportEmail}</p>
                         </div>
                         <div className="flex gap-sm">
                             <FacebookIcon color="var(--secondary)" />
@@ -35,8 +35,8 @@ const Footer = () => {
                         <div className={styles.hotline}>
                             {/* Text */}
                             <div className="flex flex-col">
-                                <h4 className="text-secondary font-bold">We&apos;re Here for You</h4>
-                                <p className="text-textKill">Chat through Line & Whatsapp</p>
+                                <h4 className="text-[var(--secondary)] font-bold">We&apos;re Here for You</h4>
+                                <p className="text-[var(--textKill)]">Chat through Line & Whatsapp</p>
                             </div>
 
                             {/* Icons */}
@@ -46,21 +46,22 @@ const Footer = () => {
                             </div>
                         </div>
                         
-                        <div className="h-[1px] w-full bg-textLight my-sm" />
+                        <div className="h-[1px] w-full bg-[var(--textLight)] my-sm" />
 
                         {/* Subscribe Section */}
                         <div className={styles.subscribe}>
-                            <h4 className="text-secondary font-bold">Exclusive Offers & Insider-Only Privileges</h4>
+                            <h4 className="text-[var(--secondary)] font-bold">Exclusive Offers & Insider-Only Privileges</h4>
                             
                             {/* Input Box */}
                             <input
                                 type="email"
                                 placeholder="Email Address"
-                                className="w-full px-sm py-[8px] text-primary placeholder:text-textKill bg-secondary outline-none"
+                                className="w-full px-sm py-[8px] text-[var(--primary)] 
+                                placeholder:text-[var(--textKill)] bg-[var(--secondary)] outline-none"
                             />
 
                             <div className="self-end">
-                                <MainButton name="Subscribe" background="bg-accent" weight="font-light" />
+                                <MainButton name="Subscribe" background="var(--accent)" weight="font-light" />
                             </div>
                         </div>
 
@@ -68,7 +69,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="h-[1px] w-full bg-textLight mt-md md:mt-xl" />
+                <div className="h-[1px] w-full bg-[var(--textLight)] mt-md md:mt-xl" />
             </div>
 
             {/* Bottom Section */}
@@ -77,8 +78,8 @@ const Footer = () => {
                     <Navbar color="textKill" showHome={true} />
                 </div>
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-textKill font-extralight text-sm">©Vast Original Inc. All rights reserved</p>
-                    <p className="text-textKill font-extralight text-sm">By JK Turner Fullstack</p>
+                    <p className="text-[var(--textKill)] font-extralight text-sm">©Vast Original Inc. All rights reserved</p>
+                    <p className="text-[var(--textKill)] font-extralight text-sm">By JK Turner Fullstack</p>
                 </div>
             </div>
         </div>

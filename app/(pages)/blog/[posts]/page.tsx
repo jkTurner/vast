@@ -25,10 +25,10 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 
                 {/* Title & Author */}
                 <div className="flex flex-col mb-sm gap-[8px]">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                    <h1 className="text-[var(--primary)] text-2xl font-bold">{post.title}</h1>
                     <div className="flex gap-xxs items-baseline just">
-                        <h4 className="text-textLight text-size-xs">By {post.author}</h4>
-                        <span className="text-textLight text-size-xs">{post.date}</span>
+                        <h4 className="text-[var(--textLight)] text-size-xs">By {post.author}</h4>
+                        <span className="text-[var(--textLight)] text-size-xs">{post.date}</span>
                     </div>
                 </div>
         
@@ -43,12 +43,12 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 </div>
         
                 <div className="">
-                    <p className="text-textLight text-size-sm">{post.content}</p>
+                    <p className="text-[var(--textLight)] text-size-sm">{post.content}</p>
                 </div>
             </div>
 
             {/* Side Content */}
-            <div className="w-full md:max-w-[30%] h-[500px] bg-primary">
+            <div className="w-full md:max-w-[30%] h-[500px] bg-[var(--primary)]">
 
             </div>
         </div>

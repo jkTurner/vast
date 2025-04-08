@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-twitter-blue: #1DA1F2;
   --color-primary: #1D222E;
   --color-primaryAdd: #12151D;
   --color-accent: #DD9E63;

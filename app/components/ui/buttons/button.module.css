@@ -22,7 +22,7 @@
 
 .logoHover:hover {
     letter-spacing: 2px;
-    color: var(--color-accent);
+    color: var(--accent);
 } */
  
 .logoHover {
@@ -31,10 +31,10 @@
     font-weight: var(--weight-extrabold);
     background: linear-gradient(
         to right,
-        var(--color-accent) 0%,
-        var(--color-accent) 50%,
-        var(--color-primary) 50%,
-        var(--color-primary) 100%
+        var(--accent) 0%,
+        var(--accent) 50%,
+        var(--primary) 50%,
+        var(--primary) 100%
     );
     background-size: 200% 100%;
     background-position: 100% 0;
@@ -51,20 +51,20 @@
   
 
 .logoText {
-    color: var(--color-primary);
+    color: var(--primary);
     transition: all 0.3s ease;
 }
 
 .logoText:hover {
     color: transparent;
-    -webkit-text-stroke: 1px var(--color-primary);
+    -webkit-text-stroke: 1px var(--primary);
 }
 
 .logoSweep {
     position: relative;
     display: inline-block;
     font-weight: var(--weight-extrabold);
-    color: var(--color-primary); 
+    color: var(--primary); 
     transition: color 0.1s ease-in;
   }
   
@@ -77,9 +77,9 @@
     height: 100%;
     background: linear-gradient(
         to right,
-      var(--color-primary) 0%,
-      var(--color-accent) 50%,
-      var(--color-primary) 100%
+      var(--primary) 0%,
+      var(--accent) 50%,
+      var(--primary) 100%
     );
     background-size: 300% 100%;
     background-position: 0 0;

@@ -27,23 +27,23 @@ const Slide: React.FC<SlideProps> = ({ name = "PRODUCT NAME", image=ModelImage.i
             </div>
             {/* Text Section */}
             <div className={styles.textContainer}>
-                <h1 className="text-secondary font-bold text-2xl md:text-4xl">{name}</h1>
-                <p className="text-textKill font-light text-sm">{detail}</p>
+                <h1 className="text-[var(--secondary)] font-bold text-2xl md:text-4xl">{name}</h1>
+                <p className="text-[var(--textKill)] font-light text-sm">{detail}</p>
                 <div className="flex gap-xs mt-xs flex-wrap">
                     {quality?.map((q, index) => (
-                        <span key={index} className="border border-textLight text-secondary px-4 py-2 text-xs tracking-wide">
+                        <span key={index} className="border border-[var(--textLight)] text-[var(--secondary)] px-4 py-2 text-xs tracking-wide">
                             {q}
                         </span>
                     ))}
                 </div>
-                {/* <div className={`hidden md:block w-[100%] h-[1px] bg-textLight my-xs`}/> */}
+                {/* <div className={`hidden md:block w-[100%] h-[1px] bg-[var(--textLight)] my-xs`}/> */}
                 <div className="block">
                     <div className={styles.lineContainer}>
                         <div className={`${ isActive ? styles.line : ""}`} />
                     </div>
                 </div>
                 <div className="self-end md:self-start">
-                    <MainButton name="View Details" background="bg-accent" weight="font-light" />
+                    <MainButton name="View Details" background="var(--accent)" weight="font-light" />
                 </div>
             </div>
         </div>

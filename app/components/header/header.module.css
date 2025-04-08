@@ -6,7 +6,7 @@
     list-style: none;
     display: flex;
     align-items: center;
-    color: var(--color-primary);
+    color: var(--primary);
     font-size: var(--size-xs);
     font-weight: var(--weight-normal);
     /* padding-left: 24px; */
@@ -29,7 +29,7 @@
     left: 0;
     height: 2px;
     width: 100%;
-    background-color: var(--color-accent);
+    background-color: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -49,8 +49,8 @@
     padding-left: var(--spacing-sm);
     display: flex;
     align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-bgContent);
+    background-color: var(--primary);
+    color: var(--bgContent);
     font-weight: var(--weight-light);
     transition: all 0.3s ease-in-out;
     z-index: 50;
@@ -74,8 +74,8 @@
     padding-left: var(--spacing-sm);
     display: flex;
     align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
     font-weight: var(--weight-light);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     z-index: 50;
@@ -117,8 +117,8 @@
   }
 
   .mobileMenuContainer:hover {
-    background-color: var(--color-accent);
-    color: var(--color-secondary);
+    background-color: var(--accent);
+    color: var(--secondary);
     cursor: pointer;
     transition: background-color 0.5s ease-in, color 1s ease;
   }

@@ -22,7 +22,7 @@ export default function Home() {
 
         {/* Value Section */}
         <div className="flex flex-col md:flex-row w-full md:px-sm max-w-[1280px] mt-2xl">
-            <ValueCard topic="Handmade" background="bg-accent" contentColor="primary" />
+            <ValueCard topic="Handmade" background="var(--accent)" contentColor="var(--primary)" />
             <ValueCard topic="All Natural" />
         </div>
 

@@ -13,7 +13,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, image }) => {
     return (
-        <div className={`flex flex-col w-full h-[480px] bg-primary items-center ${styles.cardGroup}`}>
+        <div className={`flex flex-col w-full h-[480px] bg-[var(--primary)] items-center ${styles.cardGroup}`}>
             
             {/* top section (image) */}
             <div className={styles.cardImageContainer}>
@@ -26,7 +26,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, imag
                 />
                 {/* Preview Overlay */}
                 <div className={styles.contentOverlay}>
-                    <p className="text-secondary text-size-sm line-clamp-4 overflow-hidden">{content}</p>
+                    <p className="text-[var(--secondary)] text-size-sm line-clamp-4 overflow-hidden">{content}</p>
                 </div>
                 <Link href={`/blog/${slug}`} className="absolute inset-0 z-0">
                     <span className="sr-only">View Post</span>
@@ -34,7 +34,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, imag
             </div>
 
             {/* bottom section (text) */}
-            <div className="flex flex-col h-[45%] w-full bg-secondary text-primary p-sm justify-between">
+            <div className="flex flex-col h-[45%] w-full bg-[var(--secondary)] text-[var(--primary)] p-sm justify-between">
                 <div className="flex flex-col gap-xs w-full">
                     <h3 className="text-lg font-normal">{title}</h3>
                     <p>{excerpt}</p>

@@ -64,7 +64,7 @@
 .line {
   height: 100%;
   width: 100%;
-  background-color: var(--color-textLight);
+  background-color: var(--textLight);
   transform-origin: right;
   transform: scaleX(0);
   animation: lineGrow 1s ease-out forwards;

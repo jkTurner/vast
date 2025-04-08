@@ -80,7 +80,7 @@
 //         <div className={infoAnimationClass}>
 //           <h2 className={styles.previewTitle}>{activeInfo.title}</h2>
 //           <p className={styles.previewDescription}>{activeInfo.description}</p>
-//           <MainButton name="View Details" background="bg-accent" weight="font-light" />
+//           <MainButton name="View Details" background="bg-[var(--accent)])" weight="font-light" />
 //         </div>
 //       </div>
 

@@ -7,13 +7,13 @@ import Link from "next/link";
 
 const LatestBlogBanner = () => {
     return (
-        <div className="w-full bg-primary mt-2xl">
+        <div className="w-full bg-[var(--primary)] mt-2xl">
 
             {/* Date & Title */}
             <div className={styles.blogDateTitleContainer}>
                 <div className={styles.blogDateTitleSubContainer}>
-                    <h4 className="text-xl font-bold text-accent">8 Mar 2025</h4>
-                    <h3 className="text-secondary font-bold text-3xl">Nature’s Finest<br/>For Those Who Don’t Settle</h3>
+                    <h4 className="text-xl font-bold text-[var(--accent)]">8 Mar 2025</h4>
+                    <h3 className="text-[var(--secondary)] font-bold text-3xl">Nature’s Finest<br/>For Those Who Don’t Settle</h3>
                 </div>
             </div>
 

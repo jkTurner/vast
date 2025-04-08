@@ -38,7 +38,7 @@ const ProductCarousel = () => {
 
     return (
         <>
-        <div className="embla bg-primary vastPatternPrimary w-full">
+        <div className="embla bg-[var(--primary)] vastPatternPrimary w-full">
             <div className="embla__viewport mx-auto h-[75vh] max-h-[80vh] md:h-[500px] w-full max-w-[1280px]" ref={emblaRef}>
                 <div className="embla__container h-full">
 

@@ -12,16 +12,16 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ userName = "Unknown H
         <div className="flex flex-col w-full items-center">
 
             {/* Top Section */}
-            <div className="flex flex-col gap-xs p-sm w-full bg-primary h-[200px]">
+            <div className="flex flex-col gap-xs p-sm w-full bg-[var(--primary)] h-[200px]">
                 <QuoteOpenIcon color="var(--secondary)" />
-                <p className="text-secondary">{LoremText.set20}</p>
+                <p className="text-[var(--secondary)]">{LoremText.set20}</p>
                 <div className="self-end">
                     <QuoteCloseIcon color="var(--secondary)" />
                 </div>
             </div>
 
             {/* Bottom Section Container */}
-            <div className="bg-secondary w-full">
+            <div className="bg-[var(--secondary)] w-full">
                 <div className="pl-[60px] mb-xs">
                     <BubblePointerIcon />
                 </div>
