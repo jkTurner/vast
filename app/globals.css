@@ -31,8 +31,10 @@
   --breakpoint-xs: 360px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 1024;
-  --breakpoint-xl: 1280px;
+  --breakpoint-blog: 880px;
+  --breakpoint-blogxl: 1088px;
+  /* --breakpoint-lg: 1024px; */
+  /* --breakpoint-xl: 1280px; */
   --breakpoint-2xl: 1536px;
 
   --font-weight-extralight: 200;

@@ -7,7 +7,7 @@ import styles from "./footer.module.css"
 
 const Footer = () => {
     return (
-        <div className="mt-2xl w-full bg-[var(--primary)] vastPatternPrimary">
+        <div className="mt-sm md:mt-2xl w-full bg-[var(--primary)] vastPatternPrimary">
 
             {/* Top Section */}
             <div className={styles.topSection}>

@@ -23,10 +23,10 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
   
     return (
     
-        <div className="flex flex-col md:flex-row gap-xl w-full max-w-[1280px] px-sm ">
+        <div className="flex flex-col blogxl:flex-row gap-sm md:gap-xl w-full max-w-[1280px] px-sm ">
 
             {/* Post Content */}
-            <div className="flex flex-col w-full md:max-w-[70%]">
+            <div className="flex flex-col w-full blogxl:max-w-[70%]">
                 
                 {/* Title & Author */}
                 <div className="flex flex-col mb-sm gap-[8px]">
@@ -72,7 +72,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 {/* Comment Section */}
                 <TextField placeholder="Write your comment..." buttonName="Submit" />
                 
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-xs md:gap-sm mt-sm">
                     {UserData.map((user, index) => (
                         <CommentBox key={index} name={user.name} image={user.image} comment={user.comment} />
                     ))}
@@ -81,10 +81,10 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
             </div>
 
             {/* Side Content */}
-            <div className="flex flex-col w-full md:max-w-[30%]">
+            <div className="flex flex-col flex-1">
 
                 {/* Category Section */}
-                <div className="">
+                <div className="flex flex-col">
                     <h4 className="font-bold text-[var(--textLight)]">Categories</h4>
                     <div className="flex flex-wrap gap-xs my-sm">
                         {BlogCategories.map((category, index) => (
@@ -93,10 +93,10 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                     </div>
                 </div> 
 
-                 {/* Popular Posts Section */}
-                 <div className="">
+
+                 <div className="flex flex-col">
                     <h4 className="font-bold text-[var(--textLight)]">Popular Reads</h4>
-                    <div className="flex flex-wrap gap-xs my-sm">
+                    <div className="flex flex-wrap gap-xs md:gap-sm my-sm">
                         {BlogPostData.slice(0, 3).map((post, index) => (
                             <BlogCard 
                                 key={index} 

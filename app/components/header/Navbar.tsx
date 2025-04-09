@@ -8,7 +8,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ color = "var(--primary)", showHome = false }) => {
 
-    const links = showHome ? Paths : Paths.slice(1);
+    const links = showHome ? Paths : Paths.slice(0);
 
     return (
         <nav className="flex items-center text-sm font-medium">
