@@ -8,9 +8,9 @@ interface SectionHeaderProps {
 
 const SectionHeader:React.FC<SectionHeaderProps> = ({sectionName, showButton = true, buttonText = "View All"}) => {
     return (
-        <div className="flex flex-col justify-between w-full max-w-[1280px] gap-sm my-2xl">
+        <div className="flex flex-col justify-between w-full max-w-[1280px] gap-sm my-md md:my-2xl">
             <div className="flex justify-between w-full px-sm">
-                <h2 className="font-normal">{sectionName}</h2>
+                <h2 className="font-normal text-[var(--textLight)]">{sectionName}</h2>
 
                 {showButton && (
                     <MainButton name={buttonText} weight="font-light" />

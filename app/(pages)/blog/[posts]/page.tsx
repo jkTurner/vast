@@ -80,7 +80,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
 
             </div>
 
-            {/* Side Content */}
+            {/* Right Column */}
             <div className="flex flex-col flex-1">
 
                 {/* Category Section */}

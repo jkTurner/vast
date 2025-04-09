@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MainButton from "../buttons/MainButton";
+import Link from "next/link";
 
 interface ProductCardProps {
     image: string;
@@ -31,7 +32,9 @@ const ProductCard: React.FC<ProductCardProps> = ({image, name, price, detail}) =
                     <p>{detail}</p>
                 </div>
                 <div className="self-end">
-                    <MainButton name="Add to Cart" weight="font-light" />
+                    <Link href={`/shop/${name}`}>
+                        <MainButton name="Add to Cart" weight="font-light" />
+                    </Link>
                 </div>
             </div>
         </div>

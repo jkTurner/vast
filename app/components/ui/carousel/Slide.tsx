@@ -2,6 +2,7 @@ import { ModelImage } from "@/data/mockup/MockupImage";
 import Image from "next/image";
 import styles from "./carousel.module.css"
 import MainButton from "../buttons/MainButton";
+import Link from "next/link";
 
 interface SlideProps {
     name: string;
@@ -12,6 +13,9 @@ interface SlideProps {
 }
 
 const Slide: React.FC<SlideProps> = ({ name = "PRODUCT NAME", image=ModelImage.image001, detail, quality, isActive }) => {
+
+    // const uri = name.toLowerCase();
+
     return (
         <div className={styles.slideContainer}>
             {/* Image Section */}
@@ -43,7 +47,9 @@ const Slide: React.FC<SlideProps> = ({ name = "PRODUCT NAME", image=ModelImage.i
                     </div>
                 </div>
                 <div className="self-end md:self-start">
-                    <MainButton name="View Details" background="var(--accent)" weight="font-light" />
+                <Link href={`/shop/${name.toLowerCase()}`}>
+                        <MainButton name="View Details" background="var(--accent)" weight="font-light" />
+                    </Link>
                 </div>
             </div>
         </div>

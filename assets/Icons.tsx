@@ -225,3 +225,34 @@ export const ArrowDownIcon = ({
 };
 
 
+export const CheckIcon = ({ size = 32, color = "var(--primary)", ...props }: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 16 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M5.74991 10.75C5.55097 10.75 5.36028 10.6711 5.21966 10.5304L0.719656 6.03025C0.426781 5.73737 0.426781 5.26262 0.719656 4.96975C1.01253 4.67687 1.48747 4.67687 1.78016 4.96975L5.74991 8.9395L14.2197 0.469748C14.5125 0.176873 14.9875 0.176873 15.2802 0.469748C15.573 0.762623 15.573 1.23756 15.2802 1.53044L6.28016 10.5304C6.13953 10.6711 5.94884 10.75 5.74991 10.75Z" fill={color} />
+      </svg>
+  );
+};
+
+
+export const XIcon = ({ size = 32, color = "var(--primary)", ...props }: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M19 1.30005L1 19.3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M1 1.30005L19 19.3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+  );
+};
