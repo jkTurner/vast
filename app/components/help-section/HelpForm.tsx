@@ -6,15 +6,34 @@ const HelpForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You can later hook this to an email service or backend endpoint
-    console.log({ name, email, message });
-    alert("Your message has been sent!");
-    setName("");
-    setEmail("");
-    setMessage("");
+    setStatus("Sending...");
+
+    try {
+        const res = await fetch("/api/util/send-email", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+        });
+
+        if (res.ok) {
+            setStatus("Email sent successfully");
+            setName("");
+            setEmail("");
+            setMessage("");
+        } else {
+            setStatus("Failed to send email");
+        }
+
+    } catch (error) {
+        console.error("Error sending email: ", error);
+        setStatus("Failed to send email");
+    }
   };
 
   return (
@@ -50,14 +69,17 @@ const HelpForm = () => {
 
       <div className="flex justify-between items-center">
         <span className="text-sm text-[var(--textLight)]">
-          to: <a href="mailto:support@vast-original.com" className="">support@vast-original.com</a>
+            to: <a href="mailto:support@vast-original.com" className="">support@vast-original.com</a>
         </span>
-        <button
-          type="submit"
-          className="bg-[var(--primary)] text-secondary cursor-pointer px-4 py-1 rounded-full hover:bg-[var(--accent)] text-sm"
-        >
-          Send
-        </button>
+        <div className="flex gap-sm items-center">
+            {status && <p className="text-sm text-[var(--accent)]">{status}</p>}
+            <button
+            type="submit"
+            className="bg-[var(--primary)] text-secondary cursor-pointer px-4 py-1 rounded-full hover:bg-[var(--accent)] text-sm"
+            >
+            Send
+            </button>
+        </div>
       </div>
     </form>
   );
