@@ -4,7 +4,7 @@ import { BlogPostData } from "@/data/mockup/MockupData";
 const BlogPage = () => {
     return (
         <>
-            <h1 className="my-md px-sm">Blog Page</h1>
+            <h1 className="my-md px-sm self-start w-full max-w-[1280px] mx-auto">Blog Page</h1>
             <div className="cardsContainer">
                 {BlogPostData.map((item, index) => (
                     <BlogCard 

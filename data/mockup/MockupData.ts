@@ -1,3 +1,4 @@
+import { CheckListIcon, HandCraftIcon, HeartCircleIcon, NatureIcon, StarCircleIcon } from "@/assets/Icons";
 
 // Mockup Text
 export const LoremText: Record<string, string> = {
@@ -197,3 +198,49 @@ export const BlogCategories = [
 		detail: "Reach out in English or Thai—we're here to help with any questions.",
 	}
   ]
+
+  export const AboutData = {
+	intro: "At VAST Original, we believe that grooming isn’t just about looking good — it’s about feeling confident in yourselves and expressing who you are. Born from a passion for clean aesthetics and effortless confidence, VAST is more than just a brand — it’s a lifestyle for those who move with intention.",
+	whyUs: {
+		point1: {
+			header: "All-Natural Formulas",
+			detail: "We use only high-quality, natural ingredients — no shortcuts, no harsh chemicals. Just clean, effective care.",
+			icon: NatureIcon,
+		},
+		point2: {
+			header: "Handcrafted with Precision",
+			detail: "Every product is made in small batches by hand ensuring consistent quality and attention to detail.",
+			icon: HandCraftIcon,
+		},
+		point3: {
+			header: "Tailored to You",
+			detail: "Every product and experience is crafted with sharp aesthetics, user-first thinking, and real-life uses in mind.",
+			icon: HeartCircleIcon,
+		},
+		point4: {
+			header: "Real-World Proven",
+			detail: "Every formula is refined through real-world use — by people who expect performance, not just promises.",
+			icon: CheckListIcon,
+		},
+		point5: {
+			header: "Unique & Intentional",
+			detail: "From the formula to the packaging, we obsess over every detail — because your grooming should feel as sharp as it looks.",
+			icon: StarCircleIcon,
+		}
+	},
+	drives: {
+		point1: {
+			header: "Creating Space for Self-Respect",
+			detail: "We believe men deserve better — not just in products, but in how they see themselves. VAST exists to give men the tools to feel confident, present, and proud. When self-care is normalized, self-respect follows.",
+		},
+		point2: {
+			header: "Designing with Purpose",
+			detail: "Every product we create is driven by intention — not trends. We craft solutions for real routines, helping men look sharp, feel clean, and move through life with clarity and ease.",
+		},
+		point3: {
+			header: "Empowering Everyday Confidence",
+			detail: "It’s not about standing out, it’s about showing up — for yourself. We build tools that help men feel ready, grounded, and at home in their skin. Confidence starts with care, and care starts here."
+		}
+	},
+	outro: "We’re evolving, and you’re part of that story. Explore our blog, try our picks, and reach out if you need anything. We’re building a space where confidence, design, and real-world style meet — and we’re glad you’re here.",
+  }

@@ -56,6 +56,8 @@
   --textLight: #5B6479;
   --textKill: #BFC4C7;
 
+  --desktop: 1280px;
+
   --size-xs: 15px;
   --size-sm: 16px;
   --size-md: 20px;
@@ -95,6 +97,16 @@
   }
   input, textarea, select {
     outline: none;
+  }
+  h1, h2 {
+    font-weight: var(--weight-bold);
+    font-size: var(--size-md);
+    color: var(--textLight);
+  }
+  h3 {
+    font-weight: var(--weight-bold);
+    font-size: var(--size-sm);
+    color: var(--textLight);
   }
 
 }
