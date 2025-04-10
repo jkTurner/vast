@@ -38,7 +38,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 </div>
         
                 {/* Image */}
-                <div className="w-full h-[400px] relative mb">
+                <div className="w-full h-[400px] relative">
                     <Image
                         src={post.image}
                         alt={post.title}

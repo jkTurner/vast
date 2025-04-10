@@ -149,6 +149,17 @@
   padding-right: var(--spacing-sm);
 }
 
+.cardsContainerWithPadding {
+  width: 100%;
+  max-width: 1280px;
+  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
 @media screen and (max-width: 768px) {
   .cardsContainer {
     padding: 0;
