@@ -100,7 +100,7 @@
   }
   h1, h2 {
     font-weight: var(--weight-bold);
-    font-size: var(--size-md);
+    font-size: var(--size-sm);
     color: var(--textLight);
   }
   h3 {
