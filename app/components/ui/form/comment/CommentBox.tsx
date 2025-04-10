@@ -20,7 +20,7 @@ const CommentBox: React.FC<CommentBoxProp> = ({ name="User Name", image = "", co
             </div>
 
             <div className="flex-1 flex flex-col gap-xxs">
-                <span className="text-[var(--textLight)] text-md font-bold">{name}</span>
+                <span className="text-[var(--textLight)] text-sm font-bold">{name}</span>
                 <p className="text-[var(--textLight)]">{comment}</p>
             </div>
         </div>

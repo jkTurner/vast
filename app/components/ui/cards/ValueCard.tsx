@@ -13,7 +13,7 @@ const ValueCard: React.FC<ValueCardProps> = ({background="var(--primary)", conte
         <div className={`flex flex-col gap-sm bg-[${background}] w-full md:max-w-[50%] p-lg`}>
             <div className="flex gap-sm items-center">
                 <LaurelWreath size={60} color={`${contentColor}`} />
-                <h2 className={`text-[${contentColor}] text-xl font-semibold`}>{topic}</h2>
+                <h2 className={`text-[${contentColor}] text-md font-semibold`}>{topic}</h2>
             </div>
                 <p className={`text-[${contentColor}]`}>{detail}</p>
         </div>

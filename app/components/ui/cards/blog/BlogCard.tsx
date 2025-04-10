@@ -36,7 +36,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, slug, excerpt, content, imag
             {/* bottom section (text) */}
             <div className="flex flex-col h-[45%] w-full bg-[var(--secondary)] text-[var(--primary)] p-sm justify-between">
                 <div className="flex flex-col gap-xs w-full">
-                    <h3 className="text-lg font-normal line-clamp-1">{title}</h3>
+                    <h3 className="text-md font-normal line-clamp-1">{title}</h3>
                     <p className="line-clamp-3">{excerpt}</p>
                 </div>
                 <div className="self-end">

@@ -41,7 +41,7 @@ const ProductPage = async ({ params }: { params: Promise<Params> }) => {
 
                 {/* Product Detail */}
                 <div className="flex flex-col w-full md:w-[50%] pt-sm">
-                    <h1 className="text-2xl font-bold">{product.name}</h1>
+                    <h1 className="text-xl font-bold">{product.name}</h1>
                     <span className="pt-xxs">{product.price}</span>
                     <p className="pt-md">{product.detail}</p>
 

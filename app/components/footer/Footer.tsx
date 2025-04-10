@@ -78,8 +78,8 @@ const Footer = () => {
                     <Navbar color="var(--textKill)" showHome={true} />
                 </div>
                 <div className="flex flex-col items-center md:items-start">
-                    <p className="text-[var(--textKill)] font-extralight text-sm">©Vast Original Inc. All rights reserved</p>
-                    <p className="text-[var(--textKill)] font-extralight text-sm">By JK Turner Fullstack</p>
+                    <p className="text-[var(--textKill)] font-extralight text-xs">©Vast Original Inc. All rights reserved</p>
+                    <p className="text-[var(--textKill)] font-extralight text-xs">By JK Turner Fullstack</p>
                 </div>
             </div>
         </div>

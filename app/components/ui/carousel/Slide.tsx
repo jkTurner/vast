@@ -31,7 +31,7 @@ const Slide: React.FC<SlideProps> = ({ name = "PRODUCT NAME", image=ModelImage.i
             </div>
             {/* Text Section */}
             <div className={styles.textContainer}>
-                <h1 className="text-[var(--secondary)] font-bold text-2xl md:text-4xl">{name}</h1>
+                <h1 className="text-[var(--secondary)] font-bold text-2xl md:text-xl">{name}</h1>
                 <p className="text-[var(--textKill)] font-light text-sm">{detail}</p>
                 <div className="flex gap-xs mt-xs flex-wrap">
                     {quality?.map((q, index) => (

@@ -43,7 +43,7 @@ const TestimonialCardServer: React.FC<Props> = ({ userName = "Unknown Hero", ima
                     </div>
 
                     {/* Name */}
-                    <h4 className="font-semibold text-lg">{userName}</h4>
+                    <h4 className="font-semibold text-md text-[var(--textLight)]">{userName}</h4>
 
                 </div>
             </div>

@@ -16,7 +16,7 @@ const TagButton: React.FC<TagButtonProps> = ({
         <button className={`
             ${`${hasBoarder} ? border border-[${color}] : "" `}
             text-[${color}] bg-[${background}] 
-            px-3 py-1 text-sm tracking-wide 
+            px-3 py-1 text-xs tracking-wide 
             `}>
             {name}
         </button>

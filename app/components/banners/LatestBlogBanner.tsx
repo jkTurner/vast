@@ -12,8 +12,8 @@ const LatestBlogBanner = () => {
             {/* Date & Title */}
             <div className={styles.blogDateTitleContainer}>
                 <div className={styles.blogDateTitleSubContainer}>
-                    <h4 className="text-xl font-bold text-[var(--accent)]">8 Mar 2025</h4>
-                    <h3 className="text-[var(--secondary)] font-bold text-3xl">Nature’s Finest<br/>For Those Who Don’t Settle</h3>
+                    <h4 className="text-md font-bold text-[var(--accent)]">8 Mar 2025</h4>
+                    <h3 className="text-[var(--secondary)] font-bold text-xl">Nature’s Finest<br/>For Those Who Don’t Settle</h3>
                 </div>
             </div>
 
