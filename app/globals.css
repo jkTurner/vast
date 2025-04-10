@@ -9,15 +9,14 @@
   --color-textLight: #5B6479;
   --color-textKill: #BFC4C7;
 
-  --text-size-xxs: 14px;
-  --text-size-xs: 15px;
-  --text-size-sm: 16px;
-  --text-size-md: 20px;
-  --text-size-lg: 28px;
-  --text-size-xl: 37px;
-  --text-size-2xl: 49px;
-  --text-size-3xl: 64px;
-  --text-size-4xl: 200px;
+  --text-xxs: 14px;
+  --text-xs: 15px;
+  --text-sm: 16px;
+  --text-md: 20px;
+  --text-lg: 28px;
+  --text-xl: 37px;
+  --text-2xl: 49px;
+  --text-3xl: 64px;
 
   --spacing-xxs: 8px;
   --spacing-xs: 16px;

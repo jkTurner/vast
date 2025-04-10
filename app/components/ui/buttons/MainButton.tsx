@@ -11,7 +11,7 @@ const MainButton: React.FC<MainButtonProps> = ({ name, weight = 'font-light', ba
 		<button
 			className={`
 				px-[12px] py-[6px] md:px-[16px] md:py-[8px] 
-				text-[var(--secondary)] bg-[${background}] text-sm ${weight} 
+				text-[var(--secondary)] bg-[${background}] text-xxs ${weight} 
 				relative overflow-hidden cursor-pointer ${styles.shimmerButton}`}
 			>
 			{name}

@@ -19,7 +19,7 @@ const NavLink = ({item, isFirst = false, isLast = false, color = "var(--primary)
             ${showHome ? `pl-0 border-l-0 border-r border-[${color}]` : ''}
             ${showHome && isLast ? 'border-r-0 pl-0' : ''}
             ${styles.navList} `}>
-            <Link href={item.path} className={`uppercase text-sm text-[${color}]`}>
+            <Link href={item.path} className={`uppercase text-xxs text-[${color}]`}>
                 {item.name}
             </Link>
         </li>
