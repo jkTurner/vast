@@ -86,7 +86,7 @@ export const BlogCategories = [
 	"Trips & Tricks", "Classic Looks", "Product Guide", "Haircut & Styling", "Lifestyle", "Haircare", "Essentials"
 ];
   
-  export const BlogPostData = [
+export const BlogPostData = [
 	{
 		title: "Mastering the Slick Back",
 		slug: "mastering-the-slick-back",
@@ -197,11 +197,10 @@ export const BlogCategories = [
 		tags: ["Haircare Tips", "Grooming Routine"],
 		isFeatured: false,
 	}
-
-  ];
+];
   
 
-  export const AssuranceData = [
+export const AssuranceData = [
 	{
 		name: "Secured Payment",
 		detail: "All transactions are encrypted and processed through trusted gateways.",
@@ -214,9 +213,9 @@ export const BlogCategories = [
 		name: "English & Thai Support",
 		detail: "Reach out in English or Thai—we're here to help with any questions.",
 	}
-  ]
+]
 
-  export const AboutData = {
+export const AboutData = {
 	intro: "At VAST Original, we believe that grooming isn’t just about looking good — it’s about feeling confident in yourselves and expressing who you are. Born from a passion for clean aesthetics and effortless confidence, VAST is more than just a brand — it’s a lifestyle for those who move with intention.",
 	whyUs: {
 		point1: {
@@ -260,4 +259,27 @@ export const BlogCategories = [
 		}
 	},
 	outro: "We’re evolving, and you’re part of that story. Explore our blog, try our picks, and reach out if you need anything. We’re building a space where confidence, design, and real-world style meet — and we’re glad you’re here.",
-  }
+}
+
+export const FaqData = [
+	{
+		q: "How long does shipping usually take?",
+	 	a: "Orders are typically processed within 1–2 business days and delivered within 3–7 days depending on your location. You'll receive a tracking number as soon as your order ships.",
+	},
+	{
+		q: "Are your products suitable for sensitive skin?",
+		a: "Yes. All of our formulas are made with natural, skin-friendly ingredients and are free from harsh chemicals, sulfates, and artificial fragrances.",
+	},
+	{
+		q: "Do you offer international shipping?",
+		a: "We currently ship across Thailand and select international regions. If your country isn’t listed at checkout, feel free to contact us for a custom quote.",
+	},
+	{
+		q: "Can I modify or cancel my order after placing it?",
+		a: "We can help modify or cancel your order if it hasn’t been processed yet. Reach out to us as soon as possible through the contact form or chat.",
+	},
+	{
+		q: "Do you offer wholesale or collaboration opportunities?",
+		a: "Absolutely. We’re open to partnerships with salons, barbershops, and creators. Just select 'Collaboration Request' in the contact form or email us directly.",
+	},
+]

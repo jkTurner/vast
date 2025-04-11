@@ -1,7 +1,8 @@
 
 import ChatButton from "@/app/components/ui/buttons/ChatButton";
 import ContactForm from "@/app/components/ui/form/contact-form/ContactForm";
-import { ContactData } from "@/data/mockup/MockupData";
+import { FaqIcon } from "@/assets/Icons";
+import { ContactData, FaqData } from "@/data/mockup/MockupData";
 
 const ContactPage = () => {
     return (
@@ -46,6 +47,21 @@ const ContactPage = () => {
                     </div>
                     
                 </div>
+            </div>
+
+            <div className="flex flex-col gap-sm mt-xl border-t-1 border-[var(--textKill)] pt-xl">
+                <h2 className="text-md text-[var(--primary)]">
+                    Frequently Asked Questions
+                </h2>
+                {FaqData.map((item, index) => (
+                    <div key={index} className="flex flex-col gap-xs p-sm bg-[var(--secondary)]">
+                        <h3 className="text-[var(--textLight)]">{item.q}</h3>
+                        <div className="flex gap-xs items-center">
+                            <FaqIcon size={32} color="var(--textLight)" />
+                            <p className="flex-1">{item.a}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
 
             {/* <div className="h-[300px]" /> */}
