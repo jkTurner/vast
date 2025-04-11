@@ -56,7 +56,7 @@ const ContactPage = () => {
                 {FaqData.map((item, index) => (
                     <div key={index} className="flex flex-col gap-xs p-sm bg-[var(--secondary)]">
                         <h3 className="text-[var(--textLight)]">{item.q}</h3>
-                        <div className="flex gap-xs items-center">
+                        <div className="flex gap-xs md:items-center">
                             <FaqIcon size={32} color="var(--textLight)" />
                             <p className="flex-1">{item.a}</p>
                         </div>
