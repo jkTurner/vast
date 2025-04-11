@@ -1,12 +1,16 @@
+import BlogBanner from "@/app/components/banners/BlogBanner";
 import BlogCard from "@/app/components/ui/cards/blog/BlogCard";
 import { BlogPostData } from "@/data/mockup/MockupData";
 
 const BlogPage = () => {
+
+    const blogPost = BlogPostData.slice(1, BlogPostData.length);
+
     return (
         <>
-            <h1 className="my-md px-sm">Blog Page</h1>
+            <BlogBanner />
             <div className="cardsContainer">
-                {BlogPostData.map((item, index) => (
+                {blogPost.map((item, index) => (
                     <BlogCard 
                         key={index} 
                         title={item.title} 

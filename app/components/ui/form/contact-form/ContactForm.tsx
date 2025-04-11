@@ -98,7 +98,7 @@ const ContactForm = () => {
                     {status && <p className="text-sm text-[var(--accent)]">{status}</p>}
                     <button
                         type="submit"
-                        className="bg-[var(--primary)] text-[var(--secondary)] cursor-pointer px-4 py-1 hover:bg-[var(--accent)] text-sm"
+                        className="bg-[var(--primary)] text-[var(--secondary)] cursor-pointer px-4 py-2 hover:bg-[var(--accent)] text-sm"
                     >
                         Send
                     </button>
