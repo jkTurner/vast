@@ -186,6 +186,18 @@ export const BlogCategories = [
 		tags: ["Essentials", "Trips & Tricks"],
 		isFeatured: false,
 	},
+	{
+		title: "Taming Flyaways Like a Pro",
+		slug: "taming-flyaways-like-a-pro",
+		date: "2024-04-12",
+		excerpt: "Stray hairs can ruin even the cleanest styles—here’s how to tame them without weighing down your look.",
+		content: "Flyaways are the silent saboteurs of an otherwise sharp hairstyle. Whether it’s humidity, static, or just stubborn strands, learning to control them is key to maintaining a polished finish. Start by understanding why they happen—often it’s due to dryness or breakage, so keeping your hair healthy is the first step. Use a hydrating shampoo and follow up with a lightweight conditioner, especially around the crown and edges. When styling, avoid over-brushing dry hair—it creates static. Instead, apply a small amount of styling cream or lightweight pomade to your fingertips and gently smooth down rebellious hairs. For an even sleeker touch, rub a tiny bit of product between your hands and run them lightly over the top of your style. If you're out and about, keep a travel-size hairspray or grooming balm handy—just a dab on a comb or toothbrush can instantly put flyaways back in place. For longer-term control, regular trims and deep conditioning treatments will help prevent new breakage. Ultimately, taming flyaways isn’t about perfection—it’s about polish. A clean silhouette with just the right texture sets the tone for effortless confidence.",
+		author: "J.K. Turner",
+		image: "/images/blog/blog-010.jpg",
+		tags: ["Haircare Tips", "Grooming Routine"],
+		isFeatured: false,
+	}
+
   ];
   
 
