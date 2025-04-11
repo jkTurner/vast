@@ -1,9 +1,9 @@
-import { AddressText, SupportEmail } from "@/data/mockup/MockupData";
+import { ContactData } from "@/data/mockup/MockupData";
 import VastLogoFull from "../ui/buttons/VastLogoFull";
 import { FacebookIcon, LineIcon, TwitterIcon, WhatsappIcon } from "@/assets/Icons";
 import MainButton from "../ui/buttons/MainButton";
 import Navbar from "../header/Navbar";
-import styles from "./footer.module.css"
+import styles from "./footer.module.css";
 
 const Footer = () => {
     return (
@@ -18,8 +18,8 @@ const Footer = () => {
                     <div className={styles.topLeftSection}>
                         <VastLogoFull />
                         <div>
-                            <p className="text-[var(--textKill)]">{AddressText}</p>
-                            <p className="text-[var(--textKill)]">{SupportEmail}</p>
+                            <p className="text-[var(--textKill)]">{ContactData.address}</p>
+                            <p className="text-[var(--textKill)]">{ContactData.email}</p>
                         </div>
                         <div className="flex gap-sm">
                             <FacebookIcon color="var(--secondary)" />

@@ -1,3 +1,4 @@
+import { ContactData } from "@/data/mockup/MockupData";
 import ChatButton from "../ui/buttons/ChatButton";
 import HelpForm from "./HelpForm";
 
@@ -15,7 +16,7 @@ const HelpSection = () => {
                     </div>
                     {/* <div className="h-[1px] w-full bg-[var(--textKill)]" /> */}
                     <p className="text-[var(--textLight)] text-sm">
-                        Our team is happy to help. Reach out via chat or send us a message. We&apos;ll get back to you within 24 hours.
+                        {ContactData.helpMessage}
                     </p>
                 </div>
                 <div className="flex flex-col gap-xs min-w-[250px] justify-end">

@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 className={`
                     md:hidden uppercase
                     ${styles.mobileMenuContainer} 
-                    ${styles.menuItem5}
+                    ${styles.menuItem6}
                     ${!isOpen ? styles.mobileMenuHidden : ''}
                 `}>
                 Sign In

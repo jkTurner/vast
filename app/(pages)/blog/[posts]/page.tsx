@@ -30,7 +30,7 @@ const PostPage = async ({ params }: { params: Promise<Params> }) => {
                 
                 {/* Title & Author */}
                 <div className="flex flex-col mb-sm gap-[8px]">
-                    <h1 className="text-[var(--primary)] text-xl font-bold">{post.title}</h1>
+                    <h1 className="text-[var(--primary)] text-lg font-bold">{post.title}</h1>
                     <div className="flex gap-xxs items-baseline just">
                         <h4 className="text-[var(--textLight)] text-size-xs">By {post.author}</h4>
                         <span className="text-[var(--textLight)] text-size-xs">{post.date}</span>

@@ -4,7 +4,7 @@ import styles from "./button.module.css"
 const VastLogo = () => {
   return (
     <Link href="/" className="cursor-pointer">
-      <h1 className={`text-2xl md:text-4xl font-extrabold text-[var(--primary)] ${styles.logoHover}`}>
+      <h1 className={`text-lg md:text-xl font-extrabold text-[var(--primary)] ${styles.logoHover}`}>
         VAST
       </h1>
     </Link>

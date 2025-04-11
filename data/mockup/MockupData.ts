@@ -14,6 +14,11 @@ export const LoremText: Record<string, string> = {
 export const AddressText = "116 7, San Klang, San Kamphaeng District, Chiang Mai 50130";
 export const SupportEmail = "support@vast-original.com";
 
+export const ContactData = {
+	address: "116 7, San Klang, San Kamphaeng District, Chiang Mai 50130",
+	email: "support@vast-original.com",
+	helpMessage: "Our team is happy to help. Reach out via chat or send us a message. We'll get back to you within 24 hours.",
+}
 
 // User Data
 

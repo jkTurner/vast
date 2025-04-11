@@ -10,7 +10,7 @@ const SectionHeader:React.FC<SectionHeaderProps> = ({sectionName, showButton = t
     return (
         <div className="flex flex-col justify-between w-full max-w-[1280px] gap-sm my-md md:my-2xl">
             <div className="flex justify-between w-full px-sm">
-                <h2 className="font-normal text-[var(--textLight)]">{sectionName}</h2>
+                <h2 className="font-normal text-[var(--textLight)] text-base">{sectionName}</h2>
 
                 {showButton && (
                     <MainButton name={buttonText} weight="font-light" />

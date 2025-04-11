@@ -33,7 +33,7 @@ const AboutPage = () => {
             {/* Why Us? */}
             <h2 className="px-sm text-md">Why Us?</h2>
             <ul className="flex flex-col gap-sm">
-            <div className="cardsContainer">
+            <div className="cardsContainerWithPadding">
                 {Object.values(AboutData.whyUs).map((item, index) => (
                     <li key={index}>
                         <WhyCard header={item.header} detail={item.detail} icon={item.icon} />

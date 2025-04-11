@@ -113,6 +113,10 @@
   .menuItem5 {
     top: 336px; /* 120 + 64*4 */
     transition-delay: 0.4s;
+  }
+  .menuItem6 {
+    top: 400px; /* 120 + 64*5 */
+    transition-delay: 0.5s;
     background-color: var(--primaryAdd);
   }
 

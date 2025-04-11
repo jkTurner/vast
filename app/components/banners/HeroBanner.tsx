@@ -10,7 +10,7 @@ const HeroBanner = () => {
 
                 {/* left column */}
                 <div className={styles.leftColumnContainer}>
-                    <h1 className={`text-[var(--secondary)] text-md md:text-xl font-extralight tracking-widest ${styles.fadeInItem}`}>
+                    <h1 className={`text-[var(--secondary)] text-md font-extralight tracking-widest ${styles.fadeInItem}`}>
                         VAST ORIGINAL
                     </h1>
                     <div className={styles.fadeInItem} style={{ animationDelay: '0.15s' }}>
@@ -36,7 +36,7 @@ const HeroBanner = () => {
                     {/* right column second container */}
                     <div className={`${styles.rightConlumnSecondContainer} ${styles.fadeInItem}`} style={{ animationDelay: "0.5s" }}>
                         <div className="flex w-[50%] h-full bg-[var(--accent)] items-center justify-center">
-                            <h4 className="font-bold text-4xl text-[var(--primary)]">Define<br/>Gravity</h4>
+                            <h4 className="font-bold text-xl text-[var(--primary)]">Define<br/>Gravity</h4>
                         </div>
                         <div className="w-[50%] h-full relative">
                             <Image

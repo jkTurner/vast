@@ -12,11 +12,13 @@
   --text-xxs: 14px;
   --text-xs: 15px;
   --text-sm: 16px;
+  --text-base: 18px;
   --text-md: 20px;
   --text-lg: 28px;
   --text-xl: 37px;
   --text-2xl: 49px;
   --text-3xl: 64px;
+  --text-4xl: 72px;
 
   --spacing-xxs: 8px;
   --spacing-xs: 16px;
@@ -28,6 +30,7 @@
   --spacing-3xl: 112px;
 
   --breakpoint-xs: 360px;
+  --breakpoint-ss: 560px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-blog: 880px;
@@ -57,13 +60,16 @@
 
   --desktop: 1280px;
 
-  --size-xs: 15px;
-  --size-sm: 16px;
-  --size-md: 20px;
-  --size-lg: 28px;
-  --size-xl: 37px;
-  --size-2xl: 49px;
-  --size-3xl: 64px;
+  --text-xxs: 14px;
+  --text-xs: 15px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-md: 20px;
+  --text-lg: 28px;
+  --text-xl: 37px;
+  --text-2xl: 49px;
+  --text-3xl: 64px;
+  --text-4xl: 72px;
   
   --weight-extralight: 200;
   --weight-light: 300;
@@ -108,6 +114,18 @@
     color: var(--textLight);
   }
 
+  .headerM {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--text-md);
+    color: var(--primary);
+  }
+  
+  .headerS {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--text-sm);
+    color: var(--textLight);
+  }
+  
 }
 
 .vastPatternPrimary {
@@ -123,6 +141,7 @@
   background-size: 50px;
   background-position: center;
 }
+
 
 .container {
   width: 100%;

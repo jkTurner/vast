@@ -2,24 +2,29 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer'
 
 export async function POST(request: Request) {
-    const { name, email, message } = await request.json();
+    const { name, email, message, topic } = await request.json();
 
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
-        port: 587,
-        secure: false,
+        port: Number(process.env.SMTP_PORT),
+        secure: process.env.SMTP_SECURE === "true",
         auth: {
             user: process.env.SMTP_EMAIL,
             pass: process.env.SMTP_PASSWORD,
         },
     });
 
+    const mailText = 
+        `You have received a new message from ${name} (${email}):\n\n` 
+        + (topic ? `Topic: ${topic}\n\n` : '')
+        +`${message}`;
+
     try {
         const info = await transporter.sendMail({
             from: `"${name}" <${email}>`,
             to: process.env.RECEIVER_EMAIL,
             subject: "Message from VAST site",
-            text: `You have received a new message from ${name} (${email}):\n\n${message}`,
+            text: mailText,
         });
 
         console.log('Email sent: %s', info.messageId);
