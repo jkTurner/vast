@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowDownIcon, ArrowUpIcon } from "@/assets/Icons";
+// import { ArrowDownIcon, ArrowUpIcon } from "@/assets/Icons";
 // import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
@@ -50,17 +50,19 @@ const ProductCarousel = () => {
                                 image={item.image} 
                                 quality={item.quality} 
                                 isActive={index === activeIndex}
+                                scrollNext={scrollNext}
+                                scrollPrev={scrollPrev}
                             />
                         </div>
                     ))}
                 </div>
             </div>
         </div>
-            {/* Arrows Section */}
-            <div className="w-full max-w-[1280px] mx-auto flex justify-center gap-sm mt-sm">
+            {/* Arrows Buttons */}
+            {/* <div className="w-full max-w-[1280px] mx-auto flex justify-center gap-sm mt-sm">
                 <button className="embla__prev cursor-pointer" onClick={scrollPrev}><ArrowUpIcon  /></button>
                 <button className="embla__next cursor-pointer" onClick={scrollNext}><ArrowDownIcon  /></button>
-            </div>
+            </div> */}
         </>
     )
 }
