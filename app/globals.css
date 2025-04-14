@@ -20,6 +20,7 @@
   --text-3xl: 64px;
   --text-4xl: 72px;
 
+  --spacing-xxxs: 4px;
   --spacing-xxs: 8px;
   --spacing-xs: 16px;
   --spacing-sm: 24px;
@@ -129,6 +130,16 @@
     font-weight: var(--font-weight-bold);
     font-size: var(--text-lg);
     color: var(--textLight);
+  }
+  .inputFieldUnderline {
+    flex: 1;
+    color: var(--textLight);
+    border-bottom-width: 1px;
+    border-color: var(--textKill);
+    padding: var(--spacing-xxxs);
+  }
+  .inputFieldUnderline:focus {
+    border-color: var(--primary);
   }
   
 }

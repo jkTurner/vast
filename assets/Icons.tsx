@@ -368,3 +368,76 @@ export const FaqIcon = ({
     </svg>
   );
 };
+
+export const GoogleIcon = ({ size = 32, ...props }: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 128 128"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect fill="none" width="128" height="128" />
+      <path
+        fill="#FBBC05"
+        d="M27.585,64c0-4.157,0.69-8.143,1.923-11.881L7.938,35.648C3.734,44.183,1.366,53.801,1.366,64
+          c0,10.191,2.366,19.802,6.563,28.332l21.558-16.503C28.266,72.108,27.585,68.137,27.585,64"
+      />
+      <path
+        fill="#EA4335"
+        d="M65.457,26.182c9.031,0,17.188,3.2,23.597,8.436L107.698,16
+          C96.337,6.109,81.771,0,65.457,0C40.129,0,18.361,14.484,7.938,35.648l21.569,16.471C34.477,37.033,48.644,26.182,65.457,26.182"
+      />
+      <path
+        fill="#34A853"
+        d="M65.457,101.818c-16.812,0-30.979-10.851-35.949-25.937L7.938,92.349
+          C18.361,113.516,40.129,128,65.457,128c15.632,0,30.557-5.551,41.758-15.951L86.741,96.221
+          C80.964,99.86,73.689,101.818,65.457,101.818"
+      />
+      <path
+        fill="#4285F4"
+        d="M126.634,64c0-3.782-0.583-7.855-1.457-11.636H65.457v24.727h34.376
+          c-1.719,8.431-6.397,14.912-13.092,19.13l20.474,15.828C118.981,101.129,126.634,84.861,126.634,64"
+      />
+    </svg>
+  );
+};
+
+export const CloseIcon = ({
+  size = 24,
+  color = "var(--primary)",
+  ...props
+}: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <line
+        x1="7"
+        y1="7"
+        x2="25"
+        y2="25"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <line
+        x1="7"
+        y1="25"
+        x2="25"
+        y2="7"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
