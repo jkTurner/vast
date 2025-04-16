@@ -1,17 +1,20 @@
 'use client'
 
-import React, { useEffect } from 'react'
-import MainButton from '../../ui/buttons/MainButton'
+import React, { useEffect, useState } from 'react'
+// import MainButton from '../../ui/buttons/MainButton'
 import { CloseIcon, GoogleIcon } from '@/assets/Icons'
 import styles from "./modal.module.css"
+import { login } from '@/lib/auth-actions'
 
 interface SignInModalProps {
   onClose: () => void
   switchToSignUp: () => void
+  onLoginSuccess?: () => void
 }
 
-const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp }) => {
+const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp, onLoginSuccess }) => {
 
+	// closing with ESC
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.key === "Escape") {
@@ -23,8 +26,38 @@ const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp }) =>
 		return () => document.removeEventListener("keydown", handleKeyDown);
 	}, [onClose]);
 
+	const [formData, setFormData] = useState({
+		email: '',
+		password: '',
+	});
+
+	const [error, setError] = useState<string | null>(null);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setIsLoading(true);
+		setError(null);
+
+		const data = new FormData();
+		data.set("email", formData.email);
+		data.set("password", formData.password);
+
+		const result = await login(data);
+
+		if (result?.error) {
+			setError(result.error);
+			setIsLoading(false);
+		} else {
+			setFormData({ email: '', password: '' });
+			onLoginSuccess?.();
+			onClose();
+		}
+	}
+
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs">
+		// <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs">
+		<div className="modalBackdrop">
 
 			<div className={`flex flex-col bg-[var(--secondary)] p-sm w-[90%] max-w-[500px] ${styles.modalEnter}`}>
 
@@ -34,20 +67,41 @@ const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp }) =>
 				</div>
 				
 				{/* Sign In Form */}
-				<form className="flex flex-col w-full gap-xs mt-sm mb-md">
+				<form 
+					onSubmit={handleSubmit} 
+					className="flex flex-col w-full gap-xs mt-sm mb-md"
+				>
 
 					<input
 						type="email"
 						placeholder='Email'
 						className="inputFieldUnderline"
+						value={formData.email}
+						onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 					/>
-						<input
-							type="password"
-							placeholder="Password"
-							className="inputFieldUnderline mb-sm"
-						/>
+					<input
+						type="password"
+						placeholder="Password"
+						className="inputFieldUnderline mb-xs"
+						value={formData.password}
+						onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+					/>
 
-					<MainButton onClick={onClose} name='Sign In' background='var(--primary)' />
+					{error && (
+						<p className="text-xs text-red-500">{error}</p>
+					)}
+
+					<button
+						type="submit"
+						disabled={isLoading}
+						className="bg-[var(--primary)] text-[var(--secondary)] py-xxs px-sm text-sm mt-xs cursor-pointer"
+					>
+						{isLoading ? (
+							<div className="w-6 h-6 border-2 border-[var(--secondary)] border-t-transparent rounded-full animate-spin justify-self-center" />
+						): (
+							"Sign In"
+						)}
+					</button>
 
 				</form>
 				

@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 
@@ -13,16 +13,14 @@ export async function login(formData: FormData) {
 
     // basic type checking
     if (typeof rawEmail !== "string" || typeof rawPassword !== "string") {
-        console.error("Invalid form input: email or password not strings");
-        redirect(`/error?message=Invalid credentials`)
+        return { error: "Invalid input. Please fill out all fields correctly." };
     }
 
     const email = rawEmail.trim().toLowerCase();
     const password = rawPassword.trim();
 
-    if (!email.includes("@") || password.length < 6 ) {
-        console.error("Validation failed: invalid email or password");
-        redirect(`/error?message=Invalid credentials`)
+    if (!email.includes("@")) {
+        return { error: "Please enter a valid email." };
     }
 
     const { error } = await supabase.auth.signInWithPassword({
@@ -32,11 +30,12 @@ export async function login(formData: FormData) {
 
     if (error) {
         console.error("Supabase auth error: ", error.message);
-        redirect(`/error?message=Invalid credentials`)
+        return { error: "Login failed. Please check your credentials and try again." };
     }
 
-    revalidatePath("/", "layout");
-    redirect("/error?message=Invalid credentials");
+    // revalidatePath("/", "layout");
+    // redirect("/error?message=Invalid credentials");
+	return null;
 }
 
 export async function signup(
@@ -127,7 +126,8 @@ export async function signout() {
         redirect(`/error?message=Invalid credentials`)
     }
 
-    redirect("/logout");
+    // redirect("/logout");
+    redirect("/?logout=1");
 }
 
 export async function signInWithGoogle() {

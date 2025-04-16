@@ -12,6 +12,7 @@ interface SignUpModalProps {
 
 const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) => {
 
+    // closing with ESC
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
@@ -23,7 +24,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
         return () => document.removeEventListener("keydown", handleKeyDown);
     }, [onClose]);
 
-    const [formData, setFormData] = React.useState({
+    const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
@@ -57,7 +58,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
     }
 
     return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs">
+		<div className="modalBackdrop">
 
             <div className={`flex flex-col bg-[var(--secondary)] p-sm w-[90%] max-w-[500px] ${styles.modalEnter}`}>
 
@@ -130,8 +131,8 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
 
                     <button 
                         type="submit" 
-                        className="bg-[var(--primary)] text-[var(--secondary)] py-xxs px-sm text-sm mt-xs cursor-pointer"
                         disabled={isLoading}
+                        className="bg-[var(--primary)] text-[var(--secondary)] py-xxs px-sm text-sm mt-xs cursor-pointer"
                     >
                         {isLoading ? (
                             <div className="w-6 h-6 border-2 border-[var(--secondary)] border-t-transparent rounded-full animate-spin justify-self-center" />

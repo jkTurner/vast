@@ -6,10 +6,20 @@ import { LoremText } from "@/data/mockup/MockupData";
 import ValueCard from "./components/ui/cards/ValueCard";
 import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";
+import SignOutModal from "./components/(auth)/modals/SignOutModals";
 
-export default function Home() {
+type HomeProps = {
+    searchParams?: { logout?: string};
+}
+
+export default function Home({ searchParams }: HomeProps) {
+
+    const logoutSuccess = searchParams?.logout === "1";
+
     return (
     <>
+        {logoutSuccess && <SignOutModal />}
+        
         <HeroBanner />
 
         {/* Product Section */}
@@ -27,7 +37,6 @@ export default function Home() {
         </div>
 
         {/* Blog Section */}
-        {/* <SectionHeader name="From the Journal" /> */}
         <LatestBlogBanner />
 
         {/* Testimonial Section */}
@@ -38,8 +47,6 @@ export default function Home() {
             <TestimonialCardClient userName="Michael Fisher" image={AvatarImage.image003} />
         </div>
 
-        {/* Extra Workspace(temporary) */}
-        {/* <div className="h-[200px]" /> */}
     </>
   );
 }

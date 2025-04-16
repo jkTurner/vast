@@ -141,6 +141,17 @@
   .inputFieldUnderline:focus {
     border-color: var(--primary);
   }
+
+  .modalBackdrop {
+    position: fixed;
+    inset: calc(var(--spacing) * 0);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000080;
+    backdrop-filter: blur(4px);
+  }
   
 }
 
