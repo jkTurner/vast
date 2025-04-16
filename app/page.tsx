@@ -8,12 +8,11 @@ import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";
 import SignOutModal from "./components/(auth)/modals/SignOutModals";
 
-type HomeProps = {
-    searchParams?: { logout?: string };
-  };
-  
-  export default async function Home({ searchParams }: HomeProps): Promise<React.ReactElement> {
-
+export default function Home({
+    searchParams,
+  }: {
+    searchParams?: { [key: string]: string | string[] | undefined };
+  }) {
     const logoutSuccess = searchParams?.logout === "1";
 
     return (
