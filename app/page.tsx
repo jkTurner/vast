@@ -8,11 +8,10 @@ import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";
 import SignOutModal from "./components/(auth)/modals/SignOutModals";
 
-export default async function Home({
-    searchParams,
-  }: {
-    searchParams?: { [key: string]: string | string[] | undefined };
+export default async function Home(props: {
+    searchParams: Promise<{ logout?: string }>;
   }) {
+    const searchParams = await props.searchParams;
     const logoutSuccess = searchParams?.logout === "1";
 
     return (
