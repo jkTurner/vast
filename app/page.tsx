@@ -8,7 +8,7 @@ import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";
 import SignOutModal from "./components/(auth)/modals/SignOutModals";
 
-export default function Home({
+export default async function Home({
     searchParams,
   }: {
     searchParams?: { [key: string]: string | string[] | undefined };
