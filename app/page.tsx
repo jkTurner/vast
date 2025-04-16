@@ -9,10 +9,10 @@ import TestimonialCardClient from "./components/ui/cards/testimonial/Testimonial
 import SignOutModal from "./components/(auth)/modals/SignOutModals";
 
 type HomeProps = {
-    searchParams?: { logout?: string};
-}
-
-export default function Home({ searchParams }: HomeProps) {
+    searchParams?: { logout?: string };
+  };
+  
+  export default async function Home({ searchParams }: HomeProps): Promise<React.ReactElement> {
 
     const logoutSuccess = searchParams?.logout === "1";
 
