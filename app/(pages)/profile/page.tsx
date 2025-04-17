@@ -1,12 +1,20 @@
-// import SignOutButton from "@/app/components/(auth)/SignOutButton";
+import { getUserClient } from "@/lib/getUserClient";
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
+import ProfileClient from "./ProfileClient";
 
+const ProfilePage = async () => {
 
-const ProfilePage = () => {
+    const queryClient = new QueryClient();
+
+    await queryClient.prefetchQuery({
+        queryKey: ["user"],
+        queryFn: getUserClient,
+    });
+
     return (
-        <div className="flex flex-col gap-sm h-[500px] items-center">
-            <h4>Profile Page in Making!</h4>
-            {/* <SignOutButton onSignOutSuccess={onSignOutSuccess} /> */}
-        </div>
+        <HydrationBoundary state={dehydrate(queryClient)}>
+            <ProfileClient />
+        </HydrationBoundary>
     )
 }
 

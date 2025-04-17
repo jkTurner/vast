@@ -9,22 +9,18 @@ import { HamburgerIcon } from '@/assets/Icons'
 import SignUpModal from '../(auth)/modals/SignUpModal'
 import SignInModal from '../(auth)/modals/SignInModal'
 import UserMenu from './UserMenu'
-import { getUserClient } from '@/lib/getUserClient'
-import { User } from '@supabase/supabase-js'
+import { useUser } from '@/hooks/useUser'
 
 const Header = () => {
 
 	const [activeModal, setActiveModal] = useState<null | 'signIn' | 'signUp'>(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [user, setUser] = useState<User | null>(null);
+
+	const { data: user, refetch } = useUser();
 
 	const toggleMenu = () => {
 		setIsMenuOpen(prev => !prev);
 	}
-
-	useEffect(() => {
-		getUserClient().then(setUser);
-	}, []);
 
 	// handle mobile menu visibility
 	useEffect(() => {
@@ -39,11 +35,11 @@ const Header = () => {
 		}, [isMenuOpen]
 	);
 
-	const handleLoginSuccess = async () => {
-		const user = await getUserClient();
-		setUser(user);
+	const handleLoginSuccess = () => {
+		refetch();
+		setActiveModal(null);
 	}
-
+	
 	return (
 		<div className="container px-sm">
 			<div className="flex w-full justify-between items-center py-md h-[80px] md:h-[120px]">
@@ -56,11 +52,7 @@ const Header = () => {
 
 				{user ? (
 					<div className="relative">
-						<UserMenu 
-							name={user.user_metadata?.full_name || "Friend"} 
-							image={user.user_metadata?.image}
-							onSignOutSuccess={() => setUser(null)}
-						/>
+						<UserMenu />
 					</div>
 				): (
 					<MainButton name="Sign in" onClick={() => setActiveModal('signIn')} />
