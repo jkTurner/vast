@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react";
+import { useUser } from "@/hooks/useUser";
+import { useEffect, useState } from "react";
 
 const ContactForm = () => {
 
@@ -9,6 +10,15 @@ const ContactForm = () => {
     const [topic, setTopic] = useState("General Inquiry");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
+
+    const { data: user } = useUser();
+
+    useEffect(() => {
+        if (user) {
+            setName((prev) =>  prev || user?.user_metadata?.full_name || "");
+            setEmail((prev) => prev || user?.user_metadata?.email || "");
+        }
+    }, [user])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
