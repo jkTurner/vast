@@ -26,6 +26,7 @@ const Header = () => {
 		getUserClient().then(setUser);
 	}, []);
 
+	// handle mobile menu visibility
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth >= 768 && isMenuOpen) {

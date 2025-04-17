@@ -1,8 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SignOutButton from "./SignOutButton";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import { usePressEscape } from "@/hooks/usePressEscape";
 
 type UserMenuProps = {
     name: string;
@@ -12,13 +14,16 @@ type UserMenuProps = {
 const UserMenu = ({ name, image }: UserMenuProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    // close on ESC
+    usePressEscape(() => { setIsOpen(false)});
+
+    // close on clicking outside
+    useClickOutside(menuRef, () => setIsOpen(false));
 
     return (
-        <div className="flex flex-col items-end">
-            {/* <p className="text-sm text-[var(--textLight)]">
-                Welcome
-            </p>
-            <span className="font-bold">{name}</span> */}
+        <div ref={menuRef} className="flex flex-col items-end">
             <div 
                 className="cursor-pointer"
                 onClick={() => setIsOpen(prev => !prev)}
@@ -60,14 +65,9 @@ const UserMenu = ({ name, image }: UserMenuProps) => {
                     ">
                         <span>Order History</span>
                     </div>
-                    {/* <div className="flex flex-col w-full gap-xs p-xs bg-[var(--secondary)] text-xs text-[var(-textLight)]">
-                        <p>Profile</p>
-                        <p>Order History</p>
-                        <p>Sign Out</p>
-                    </div> */}
-                        <div className="self-end p-xs">
-                            <SignOutButton />
-                        </div>
+                    <div className="self-end p-xs">
+                        <SignOutButton />
+                    </div>
                 </div>
             )}
         </div>
@@ -75,53 +75,3 @@ const UserMenu = ({ name, image }: UserMenuProps) => {
 }
 
 export default UserMenu;
-
-
-// 'use client'
-// import { useEffect, useState } from "react";
-// import { createClient } from "@/utils/supabase/client";
-
-// const UserMenu = () => {
-//     const [userName, setUserName] = useState<string | null>(null);
-
-//     useEffect(() => {
-//         const supabase = createClient();
-//         supabase.auth.getUser().then(({ data: { user } }) => {
-//         const name = user?.user_metadata?.full_name || user?.email?.split("@")[0];
-//         setUserName(name ?? null);
-//         });
-//     }, []);
-
-//     if (!userName) return null;
-
-//     return (
-//         <div className="flex flex-col items-end">
-//             <p className="text-sm text-[var(--textLight)]">
-//                 Welcome
-//             </p>
-//             <span className="text-[var(--textLight)] font-bold">{userName}</span>
-//         </div>
-//     );
-// };
-
-// export default UserMenu;
-
-
-// server-side version
-// import { getUser } from "@/lib/getUser";
-// const UserMenu = async () => {
-
-//     const user = await getUser();
-
-//     if (!user) return null;
-
-//     const name = user.user_metadata?.full_name || "Friend";
-
-//     return (
-//         <p className="text-sm text-[var(--textLight)]">
-//             Wlcome, <span className="font-bold">{name}</span>
-//         </p>
-//     )
-// }
-
-// export default UserMenu;

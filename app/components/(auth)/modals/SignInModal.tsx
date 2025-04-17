@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-// import MainButton from '../../ui/buttons/MainButton'
+import React, { useState } from 'react'
 import { CloseIcon, GoogleIcon } from '@/assets/Icons'
 import styles from "./modal.module.css"
 import { login } from '@/lib/auth-actions'
+import { usePressEscape } from '@/hooks/usePressEscape'
 
 interface SignInModalProps {
   onClose: () => void
@@ -14,25 +14,15 @@ interface SignInModalProps {
 
 const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp, onLoginSuccess }) => {
 
-	// closing with ESC
-	useEffect(() => {
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key === "Escape") {
-				onClose();
-			}
-		}
-
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, [onClose]);
-
+	const [error, setError] = useState<string | null>(null);
+	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState({
 		email: '',
 		password: '',
 	});
 
-	const [error, setError] = useState<string | null>(null);
-	const [isLoading, setIsLoading] = useState(false);
+	// close on Escape pressed
+	usePressEscape(() => onClose());
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
