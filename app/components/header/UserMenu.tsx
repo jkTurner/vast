@@ -2,16 +2,18 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import SignOutButton from "./SignOutButton";
+import SignOutButton from "../(auth)/SignOutButton";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { usePressEscape } from "@/hooks/usePressEscape";
+import Link from "next/link";
 
 type UserMenuProps = {
-    name: string;
-    image?: string;
+    name: string
+    image?: string
+    onSignOutSuccess: () => void
 }
 
-const UserMenu = ({ name, image }: UserMenuProps) => {
+const UserMenu = ({ name, image, onSignOutSuccess }: UserMenuProps) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
@@ -55,18 +57,22 @@ const UserMenu = ({ name, image }: UserMenuProps) => {
                     <div className="bg-[var(--primary)] text-[var(--secondary)] text-xs p-xs line-clamp-1">
                         <span>Welcome, {name}</span>
                     </div>
-                    <div className="text-xs p-xs text-[var(--textLight)] line-clamp-1
-                        hover:bg-accent hover:text-[var(--secondary)]
-                    ">
-                        <span>Profile</span>
-                    </div>
-                    <div className="text-xs p-xs text-[var(--textLight)] line-clamp-1
-                        hover:bg-accent hover:text-[var(--secondary)]
-                    ">
-                        <span>Order History</span>
-                    </div>
+                    <Link href="/profile">
+                        <div className="text-xs p-xs text-[var(--textLight)] line-clamp-1
+                            hover:bg-accent hover:text-[var(--secondary)]
+                        ">
+                                <span>Profile</span>
+                        </div>
+                    </Link>
+                    <Link href="/profile/history">
+                        <div className="text-xs p-xs text-[var(--textLight)] line-clamp-1
+                            hover:bg-accent hover:text-[var(--secondary)]
+                        ">
+                            <span>Order History</span>
+                        </div>
+                    </Link>
                     <div className="self-end p-xs">
-                        <SignOutButton />
+                        <SignOutButton onSignOutSuccess={onSignOutSuccess} />
                     </div>
                 </div>
             )}

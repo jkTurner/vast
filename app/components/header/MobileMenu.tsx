@@ -6,10 +6,13 @@ import Link from "next/link";
 
 interface MobileMenuProps {
     isOpen: boolean;
+    isUser: boolean;
     onClose: () => void;
+    onOpenSignIn: () => void;
+    name?: string;
 }
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, isUser, onClose, onOpenSignIn, name }: MobileMenuProps) => {
     return (
         <>
             {Paths.map((item, index) => (
@@ -27,18 +30,39 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                     {item.name}
                 </Link>
             ))}
-            <Link 
-                href="/sign-in"
-                onClick={onClose}
-                className={`
-                    md:hidden uppercase
-                    ${styles.mobileMenuContainer} 
-                    ${styles.menuItem6}
-                    ${!isOpen ? styles.mobileMenuHidden : ''}
-                `}>
-                Sign In
-            </Link>
-                
+            {isUser ? (
+                <Link
+                    href="/profile"
+                    onClick={onClose}
+                    className={`
+                        md:hidden uppercase
+                        ${styles.mobileMenuContainer}        
+                        ${styles.menuItem6}
+                        ${!isOpen ? styles.mobileMenuHidden : ''}
+                    `}
+                >
+                    <p className="text-[var(--textKill)] line-clamp-1">
+                        <span className="text-[var(--secondary)]">Profile &nbsp;&nbsp;&nbsp;</span>
+                        ({name})
+                    </p>
+                </Link>
+            ) : (
+                <div 
+                    onClick={(e) => {
+                        e.preventDefault();
+                        onClose();
+                        onOpenSignIn();
+                    }}
+                    className={`
+                        md:hidden uppercase
+                        ${styles.mobileMenuContainer} 
+                        ${styles.menuItem6}
+                        ${!isOpen ? styles.mobileMenuHidden : ''}
+                    `}>
+                    Sign In
+                </div>
+            )}
+    
             </>
         )
     }

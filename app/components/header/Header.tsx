@@ -8,7 +8,7 @@ import MobileMenu from './MobileMenu'
 import { HamburgerIcon } from '@/assets/Icons'
 import SignUpModal from '../(auth)/modals/SignUpModal'
 import SignInModal from '../(auth)/modals/SignInModal'
-import UserMenu from '../(auth)/UserMenu'
+import UserMenu from './UserMenu'
 import { getUserClient } from '@/lib/getUserClient'
 import { User } from '@supabase/supabase-js'
 
@@ -56,33 +56,44 @@ const Header = () => {
 
 				{user ? (
 					<div className="relative">
-						<UserMenu name={user.user_metadata?.full_name || "Friend" } image={user.user_metadata?.image} />
+						<UserMenu 
+							name={user.user_metadata?.full_name || "Friend"} 
+							image={user.user_metadata?.image}
+							onSignOutSuccess={() => setUser(null)}
+						/>
 					</div>
 				): (
 					<MainButton name="Sign in" onClick={() => setActiveModal('signIn')} />
 				)}
 
-				{activeModal === 'signIn' && (
+			</div>
+
+			{activeModal === 'signIn' && (
 				<SignInModal
 					onClose={() => setActiveModal(null)}
 					switchToSignUp={() => setActiveModal('signUp')}
 					onLoginSuccess={handleLoginSuccess}
 				/>
-				)}
-				{activeModal === 'signUp' && (
+			)}
+			{activeModal === 'signUp' && (
 				<SignUpModal
 					onClose={() => setActiveModal(null)}
 					switchToSignIn={() => setActiveModal('signIn')}
 				/>
-				)}
-			</div>
+			)}
 
 			{/* mobile nav */}
 			<button onClick={toggleMenu} className="md:hidden cursor-pointer p-sm">
 				<HamburgerIcon size={32} />
 			</button>
 
-			<MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+			<MobileMenu 
+				isOpen={isMenuOpen} 
+				isUser={!!user}
+				onClose={() => setIsMenuOpen(false)} 
+				onOpenSignIn={() => setActiveModal("signIn")} 
+				name={user?.user_metadata?.full_name || "Friend" }
+			/>
 
 			</div>
 		</div>

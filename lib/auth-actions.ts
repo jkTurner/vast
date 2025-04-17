@@ -116,19 +116,17 @@ export async function signup(
   }
   
 
-export async function signout() {
-
-    const supabase = await createClient();
-    const { error } = await supabase.auth.signOut();
-
-    if (error) {
-        console.log(error);
-        redirect(`/error?message=Invalid credentials`)
-    }
-
-    // redirect("/logout");
-    redirect("/?logout=1");
-}
+  export async function signout(): Promise<{ success: boolean }> {
+	const supabase = await createClient();
+	const { error } = await supabase.auth.signOut();
+  
+	if (error) {
+	  console.log(error);
+	  return { success: false };
+	}
+  
+	return { success: true };
+  }
 
 export async function signInWithGoogle() {
 

@@ -46,7 +46,6 @@ const SignInModal: React.FC<SignInModalProps> = ({ onClose, switchToSignUp, onLo
 	}
 
 	return (
-		// <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs">
 		<div className="modalBackdrop">
 
 			<div className={`flex flex-col bg-[var(--secondary)] p-sm w-[90%] max-w-[500px] ${styles.modalEnter}`}>
