@@ -1,10 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
-import { CloseIcon, GoogleIcon } from '@/assets/Icons'
+import { CloseIcon } from '@/assets/Icons'
 import styles from "./modal.module.css"
 import { signup } from '@/lib/auth-actions'
 import { usePressEscape } from '@/hooks/usePressEscape'
+import SignInWithGoogleButton from '../SignInWithGoogleButton'
 
 interface SignUpModalProps {
   onClose: () => void
@@ -153,10 +154,8 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
 					<h3 className="text-sm font-light w-[20px]">Or</h3>
 					<div className="h-[1px] bg-[var(--textKill)] flex-1" />
 				</div>
-				<button className="flex justify-between items-center py-3 px-sm border-[var(--textKill)] border-1 text-[var(--textLight)] text-sm cursor-pointer">
-					Continue with Google
-					<GoogleIcon size={24} />
-				</button>
+				
+                <SignInWithGoogleButton />
 				
 				{/* Terms & Con */}
 				<div className="flex flex-col p-sm">

@@ -12,7 +12,7 @@ const ProfileClient = () => {
     const name = user?.user_metadata?.full_name || "Friend";
 
     return (
-        <div className="flex flex-col gap-sm h-[500px] items-center">
+        <div className="flex flex-col gap-sm h-[800px] items-center">
             <h1>Profile Page In The Making!</h1>
             <div>
                 <span>Welcome, </span>
