@@ -7,7 +7,7 @@ const SignInWithGoogleButton = () => {
         <button
             type="button"
             className="flex justify-between items-center py-3 px-sm border-[var(--textKill)] border-1 text-[var(--textLight)] text-sm cursor-pointer"
-            onClick={signInWithGoogle}
+            onClick={() => signInWithGoogle()}
         >
             Continue with Google
             <GoogleIcon size={24} />
