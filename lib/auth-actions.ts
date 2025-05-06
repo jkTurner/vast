@@ -2,11 +2,11 @@
 
 // import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createClient } from "@/utils/supabase/server";
+import { supabaseClientServer } from "@/utils/supabase/server";
 
 export async function login(formData: FormData) {
 
-    const supabase = await createClient();
+    const supabase = await supabaseClientServer();
 
     const rawEmail = formData.get("email");
     const rawPassword = formData.get("password");
@@ -42,7 +42,7 @@ export async function signup(
 	prevState: { errors?: Partial<Record<string, string>> } | null,
 	formData: FormData
   ): Promise<{ errors?: Partial<Record<string, string>> } | null> {
-	const supabase = await createClient();
+	const supabase = await supabaseClientServer();
   
 	const rawFirstName = formData.get("firstName");
 	const rawLastName = formData.get("lastName");
@@ -117,7 +117,7 @@ export async function signup(
   
 
   export async function signout(): Promise<{ success: boolean }> {
-	const supabase = await createClient();
+	const supabase = await supabaseClientServer();
 	const { error } = await supabase.auth.signOut();
   
 	if (error) {
@@ -130,7 +130,7 @@ export async function signup(
 
 export async function signInWithGoogle() {
 
-    const supabase = await createClient();
+    const supabase = await supabaseClientServer();
     const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
@@ -138,13 +138,15 @@ export async function signInWithGoogle() {
         access_type: "offline",
         prompt: "consent",
         },
-    },
+		redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+	},
     });
 
-    if (error) {
-        console.log(error);
+    if (error || !data.url) {
+        console.error("OAuth sign-in error: ", error?.message);
         redirect(`/error?message=Invalid credentials`)
     }
 
     redirect(data.url);
 }
+

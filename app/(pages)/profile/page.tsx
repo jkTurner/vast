@@ -1,6 +1,6 @@
 import { getUserClient } from "@/lib/getUserClient";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
-import ProfileClient from "./ProfileClient";
+import ProfileClient from "../../components/profile/ProfileClient";
 
 const ProfilePage = async () => {
 

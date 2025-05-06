@@ -8,15 +8,11 @@ import { usePressEscape } from "@/hooks/usePressEscape";
 import Link from "next/link";
 import { useUser } from "@/hooks/useUser";
 
-// type UserMenuProps = {
-//     onSignOutSuccess: () => void
-// }
-
 const UserMenu = () => {
 
     const { data: user } = useUser();
-    const name = user?.user_metadata?.full_name || "Friend";
-    const image = user?.user_metadata?.image;
+    const name = user?.full_name || "Friend";
+    const image = user?.avatar_url;
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
@@ -34,13 +30,13 @@ const UserMenu = () => {
                 onClick={() => setIsOpen(prev => !prev)}
             >
                 { image ? (
-                    <div className="w-md h-md rounded-full">
+                    <div className="w-md h-md rounded-full overflow-hidden">
                         <Image
                             src={image}
                             alt={name}
                             fill
                             priority
-                            className="overflow-hidden object-cover"
+                            className="overflow-hidden object-cover rounded-full"
                         />
                 </div>
                 ) : (
