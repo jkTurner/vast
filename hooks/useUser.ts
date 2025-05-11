@@ -5,6 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 export interface ExtendedUser extends User {
     full_name: string | null;
     avatar_url: string | null;
+    birth_date: Date | null;
+    gender: string | null,
 }
 
 export function useUser() {

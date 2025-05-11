@@ -4,6 +4,7 @@
 import { redirect } from "next/navigation";
 import { supabaseClientServer } from "@/utils/supabase/server";
 
+
 export async function login(formData: FormData) {
 
     const supabase = await supabaseClientServer();
@@ -48,6 +49,10 @@ export async function signup(
 	const rawLastName = formData.get("lastName");
 	const rawEmail = formData.get("email");
 	const rawPassword = formData.get("password");
+
+	const redirectUrl = process.env.NODE_ENV === "development"
+	? process.env.NEXT_PUBLIC_SITE_LOCAL
+	: process.env.NEXT_PUBLIC_SITE_URL;
   
 	// Basic type check
 	if (
@@ -94,6 +99,7 @@ export async function signup(
 	  email,
 	  password,
 	  options: {
+		emailRedirectTo: redirectUrl,
 		data: {
 		  full_name: `${firstName} ${lastName}`,
 		  email,
@@ -130,6 +136,10 @@ export async function signup(
 
 export async function signInWithGoogle() {
 
+	const redirectUrl = process.env.NODE_ENV === "development"
+	? process.env.NEXT_PUBLIC_SITE_LOCAL
+	: process.env.NEXT_PUBLIC_SITE_URL;
+
     const supabase = await supabaseClientServer();
     const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
@@ -138,7 +148,7 @@ export async function signInWithGoogle() {
         access_type: "offline",
         prompt: "consent",
         },
-		redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+		redirectTo: `${redirectUrl}/auth/callback`,
 	},
     });
 

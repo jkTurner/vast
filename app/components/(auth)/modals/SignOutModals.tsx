@@ -21,7 +21,7 @@ const SignOutModal = () => {
     if (!visible) return null;
     
     return (
-        <div className="modalBackdrop items-start">
+        <div className="model-backdrop items-start">
             <div className="flex flex-col gap-sm bg-[var(--secondary)] p-sm mt-md w-[90%] max-w-[500px] justify-center">
                 <span className="text-[var(--primary)] text-sm text-center">You&apos;ve been signed out.</span>
                 <div className="self-center">

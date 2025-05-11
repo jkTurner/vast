@@ -84,7 +84,8 @@ const Header = () => {
 				isUser={!!user}
 				onClose={() => setIsMenuOpen(false)} 
 				onOpenSignIn={() => setActiveModal("signIn")} 
-				name={user?.user_metadata?.full_name || "Friend" }
+				name={user?.full_name || "Friend" }
+				image={user?.avatar_url}
 			/>
 
 			</div>

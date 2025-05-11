@@ -51,7 +51,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
     }
 
     return (
-		<div className="modalBackdrop">
+		<div className="model-backdrop">
 
             <div className={`flex flex-col bg-[var(--secondary)] p-sm w-[90%] max-w-[500px] ${styles.modalEnter}`}>
 
@@ -67,14 +67,14 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
                         <input
                             type="text"
                             placeholder="First Name"
-                            className="inputFieldUnderline"
+                            className="input-underline"
                             value={formData.firstName}
                             onChange={(e) => setFormData({ ...formData, firstName: e.target.value})}
                         />
                         <input
                             type="text"
                             placeholder="Last Name"
-                            className="inputFieldUnderline"
+                            className="input-underline"
                             value={formData.lastName}
                             onChange={(e) => setFormData({ ...formData, lastName: e.target.value})}
                         />
@@ -83,14 +83,14 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ onClose, switchToSignIn }) =>
 					<input
 						type="email"
 						placeholder='Email'
-						className="inputFieldUnderline"
+						className="input-underline"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value})}
 					/>
                     <input
                         type="password"
                         placeholder="Password"
-                        className="inputFieldUnderline mb-xs"
+                        className="input-underline mb-xs"
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value})}
                     />

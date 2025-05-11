@@ -5,11 +5,13 @@ interface MainButtonProps {
     weight?: 'font-thin' | 'font-light' | 'font-normal';
     background?: 'var(--primary)' | 'var(--accent)' ;
     onClick?: () => void;
+    type?: 'button' | 'submit' | 'reset';
 }
 
-const MainButton: React.FC<MainButtonProps> = ({ name, weight = 'font-light', background = "var(--primary)", onClick }) => {
+const MainButton: React.FC<MainButtonProps> = ({ name, weight = 'font-light', background = "var(--primary)", onClick, type = 'button', }) => {
     return (
         <button
+            type={type}
 			onClick={onClick}
             className={`
                 px-[12px] py-[6px] md:px-[16px] md:py-[8px]

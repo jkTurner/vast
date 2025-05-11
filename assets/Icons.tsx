@@ -441,3 +441,66 @@ export const CloseIcon = ({
     </svg>
   );
 };
+
+export const CameraCircleIcon = ({
+  size = 24,
+  color = "var(--primary)",
+  ...props
+}: IconProps) => (
+  <svg
+    viewBox="0 0 128 128"
+    width={size}
+    height={size}
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <circle cx="64" cy="64" r="64" fill={color} />
+    <path
+      fill="#FFFFFF"
+      d="M64,48c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16S72.8,48,64,48z"
+    />
+    <path
+      fill="#FFFFFF"
+      d="M100,39H78.5l-1.3-2.1c-0.7-1.2-2-1.9-3.4-1.9H54.2c-1.4,0-2.7,0.7-3.4,1.9L49.5,39H28c-2.2,0-4,1.8-4,4v42
+         c0,2.2,1.8,4,4,4h72c2.2,0,4-1.8,4-4V43C104,40.8,102.2,39,100,39z M64,84c-11,0-20-9-20-20c0-11,9-20,20-20c11,0,20,9,20,20
+         C84,75,75,84,64,84z"
+    />
+  </svg>
+);
+
+export const CalendarIcon: React.FC<IconProps> = ({ size = 24, color = "var(--primary)", ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 22"
+    width={size}
+    height={size}
+    fill={color}
+    {...props}
+  >
+    <path d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z" />
+  </svg>
+);
+
+
+export const ChevronDownIcon = ({
+  size = 24,
+  color = "var(--primary)",
+  ...props
+}: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
+};

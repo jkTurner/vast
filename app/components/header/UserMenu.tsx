@@ -30,13 +30,13 @@ const UserMenu = () => {
                 onClick={() => setIsOpen(prev => !prev)}
             >
                 { image ? (
-                    <div className="w-md h-md rounded-full overflow-hidden">
+                    <div className="w-lg h-lg rounded-full overflow-hidden">
                         <Image
                             src={image}
                             alt={name}
                             fill
                             priority
-                            className="overflow-hidden object-cover rounded-full"
+                            className="nextImage rounded-full"
                         />
                 </div>
                 ) : (
@@ -46,7 +46,7 @@ const UserMenu = () => {
                             alt="Placeholder Image"
                             fill
                             priority
-                            className="overflow-hidden object-cover rounded-full"
+                            className="nextImage rounded-full"
                         />
                     </div>
                 )}

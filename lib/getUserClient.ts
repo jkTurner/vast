@@ -11,18 +11,21 @@ export async function getUserClient(): Promise<ExtendedUser | null> {
 
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
-    .select("full_name, avatar_url")
+    .select("full_name, avatar_url, birth_date, gender")
     .eq("id", user.id)
     .single();
 
     if (profileError) {
-        console.error("Error fetching profile: ", profileError.message);
+      console.error("Error fetching profile: ", profileError.message);
+      return null;
     }
 
   return {
     ...user,
     full_name: profile?.full_name ?? user.user_metadata?.full_name ?? null,
     avatar_url: profile?.avatar_url ?? null,
+    birth_date: profile?.birth_date ? new Date(profile.birth_date) : null,
+    gender: profile?.gender ?? null, 
   };
 }
 

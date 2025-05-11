@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-datepicker/dist/react-datepicker.css";
 
 @theme {
   --color-primary: #1D222E;
@@ -54,7 +55,6 @@
   --primaryAdd: #12151D;
   --accent: #DD9E63;
   --bgMain: #E8ECF4;
-  /* --backUpbgMain: #CCD3E0; */
   --secondary: #F7FBFE;
   --textLight: #5B6479;
   --textKill: #BFC4C7;
@@ -131,18 +131,24 @@
     font-size: var(--text-lg);
     color: var(--textLight);
   }
-  .inputFieldUnderline {
+  .input-underline {
     flex: 1;
     color: var(--textLight);
     border-bottom-width: 1px;
     border-color: var(--textKill);
     padding: var(--spacing-xxxs);
   }
-  .inputFieldUnderline:focus {
+  .input-underline:focus {
     border-color: var(--primary);
   }
 
-  .modalBackdrop {
+  .input-block {
+    width: 100%;
+    background-color: var(--bgMain);
+    padding: 10px 16px 10px 16px;
+  }
+
+  .model-backdrop {
     position: fixed;
     inset: calc(var(--spacing) * 0);
     z-index: 50;
@@ -151,6 +157,11 @@
     justify-content: center;
     background-color: #00000080;
     backdrop-filter: blur(4px);
+  }
+
+  .frame {
+    background-color: var(--secondary);
+    padding: var(--spacing-sm);
   }
   
 }
@@ -168,7 +179,6 @@
   background-size: 50px;
   background-position: center;
 }
-
 
 .container {
   width: 100%;
@@ -205,6 +215,12 @@
   padding-right: var(--spacing-sm);
 }
 
+.nextImage {
+  object-fit: cover;
+  overflow: hidden;
+  overflow-clip-margin: unset;
+}
+
 @media screen and (max-width: 768px) {
   .cardsContainer {
     padding: 0;
@@ -227,4 +243,55 @@
   /* height: 100%; */
   min-height: 0;
   position: relative;
+}
+
+
+
+/* Date Picker */
+.custom-datepicker {
+  /* Whole calendar */
+  font-size: 14px;
+  /* padding: 8px; */
+  /* border-radius: 12px; */
+  /* background-color: var(--secondary);
+  color: var(--primary); */
+}
+
+.custom-datepicker .react-datepicker__header {
+  background-color: var(--bgMain);
+  padding: var(--spacing-sm);
+  border-bottom: none;
+}
+
+.custom-datepicker .react-datepicker__current-month {
+  display: none;
+  color: var(--textLight);
+  font-weight: var(--weight-semibold);
+  font-size: 20px;
+  padding: 12px;
+}
+
+.custom-datepicker .react-datepicker__day--selected {
+  background-color: var(--accent);
+  color: white;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--accent);
+  color: white; 
+}
+
+.react-datepicker__month-select,
+.react-datepicker__year-select {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--textLight);
+  cursor: pointer;
+}
+
+.react-datepicker__day-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5b6479;
+  margin-top: 12px;
 }

@@ -1,6 +1,7 @@
 import { getUserClient } from "@/lib/getUserClient";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import ProfileClient from "../../components/profile/ProfileClient";
+import ShippingAddress from "@/app/components/profile/ShippingAddress";
 
 const ProfilePage = async () => {
 
@@ -13,9 +14,19 @@ const ProfilePage = async () => {
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <ProfileClient />
+            <div className="w-full max-w-[var(--desktop)] min-h-[75vh] flex gap-sm">
+                <div className="flex flex-col gap-sm w-full max-w-[68%]">
+                    <ProfileClient />
+                    <ShippingAddress />
+                </div>
+                <div className="flex-1 bg-sky-600"></div>
+            </div>
         </HydrationBoundary>
     )
 }
 
 export default ProfilePage;
+
+
+
+

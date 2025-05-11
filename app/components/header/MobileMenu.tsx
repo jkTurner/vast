@@ -3,6 +3,7 @@
 import { Paths } from "@/data/Paths";
 import styles from "./header.module.css"
 import Link from "next/link";
+import Image from "next/image";
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -10,9 +11,10 @@ interface MobileMenuProps {
     onClose: () => void;
     onOpenSignIn: () => void;
     name?: string;
+    image?: string | null;
 }
 
-const MobileMenu = ({ isOpen, isUser, onClose, onOpenSignIn, name }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, isUser, onClose, onOpenSignIn, name, image }: MobileMenuProps) => {
     return (
         <>
             {Paths.map((item, index) => (
@@ -43,8 +45,27 @@ const MobileMenu = ({ isOpen, isUser, onClose, onOpenSignIn, name }: MobileMenuP
                 >
                     <p className="text-[var(--textKill)] line-clamp-1">
                         <span className="text-[var(--secondary)]">Profile &nbsp;&nbsp;&nbsp;</span>
-                        ({name})
                     </p>
+                    <div className="flex gap-xs items-center pr-sm flex-1">
+                        { image ? (
+                            <div className="w-lg h-lg relative">
+                                <Image
+                                    src={image}
+                                    alt="profile image"
+                                    fill
+                                    className="nextImage rounded-full"
+                                    />
+                            </div>
+                        ) : (
+                                <Image
+                                    src="/images/placeholder-profile-image.jpg"
+                                    alt="placeholder profile image"
+                                    fill
+                                    className="nextImage rounded-full"
+                                />
+                            )}
+                        {name}
+                    </div>
                 </Link>
             ) : (
                 <div 
