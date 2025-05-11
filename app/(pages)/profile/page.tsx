@@ -14,12 +14,12 @@ const ProfilePage = async () => {
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <div className="w-full max-w-[var(--desktop)] min-h-[75vh] flex gap-sm">
-                <div className="flex flex-col gap-sm w-full max-w-[68%]">
+            <div className="w-full max-w-[var(--desktop)] min-h-[75vh] flex md:flex-row flex-col gap-sm">
+                <div className="flex flex-col gap-sm w-full md:max-w-[68%]">
                     <ProfileClient />
                     <ShippingAddress />
                 </div>
-                <div className="flex-1 bg-sky-600"></div>
+                {/* <div className="flex-1 bg-sky-600"></div> */}
             </div>
         </HydrationBoundary>
     )

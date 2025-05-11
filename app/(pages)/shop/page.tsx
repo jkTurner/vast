@@ -10,7 +10,7 @@ const ShopPage = () => {
         <>
             <ProductCarousel />
             <SectionHeader sectionName="Products" showButton={false} />
-            <div className="cardsContainer">
+            <div className="cardsContainer mb-sm md:mb-0">
                 <ProductCard image={ProductImage.image001} name={"Product 001"} price={"$35.99"} detail={LoremText.set10} />
                 <ProductCard image={ProductImage.image002} name={"Product 002"} price={"$30.99"} detail={LoremText.set10} />
                 <ProductCard image={ProductImage.image003} name={"Product 003"} price={"$45.99"} detail={LoremText.set10} />

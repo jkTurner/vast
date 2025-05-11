@@ -6,7 +6,7 @@ import { ContactData, FaqData } from "@/data/mockup/MockupData";
 
 const ContactPage = () => {
     return (
-        <div className="flex flex-col w-full max-w-[var(--desktop)] px-sm flex-1">
+        <div className="flex flex-col w-full max-w-[var(--desktop)] px-sm flex-1 mb-sm md:mb-0">
 
             {/* Intro */}
             <div className="my-md">

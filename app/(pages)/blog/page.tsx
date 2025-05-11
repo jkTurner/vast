@@ -9,7 +9,7 @@ const BlogPage = () => {
     return (
         <>
             <BlogBanner />
-            <div className="cardsContainer">
+            <div className="cardsContainer mb-sm md:mb-0">
                 {blogPost.map((item, index) => (
                     <BlogCard 
                         key={index} 

@@ -8,7 +8,7 @@ const AboutPage = () => {
     console.log(AboutData);
 
     return (
-        <div className="flex flex-col gap-md w-full max-w-[var(--desktop)] mt-xl">
+        <div className="flex flex-col gap-md w-full max-w-[var(--desktop)] mt-xl mb-sm md:mb-0">
 
             <div className="flex flex-col lg:flex-row w-full gap-md px-sm relative">
 

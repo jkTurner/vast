@@ -39,7 +39,7 @@ export default async function Home(props: {
 
         {/* Testimonial Section */}
         <SectionHeader sectionName="Our Happy Clients Say:" showButton={false} />
-        <div className="cardsContainer">
+        <div className="cardsContainer mb-sm md:mb-0">
             <TestimonialCardClient userName="Jimmy Brown" image={AvatarImage.image001} />
             <TestimonialCardClient userName="Samuel Gadhzi" image={AvatarImage.image002} />
             <TestimonialCardClient userName="Michael Fisher" image={AvatarImage.image003} />

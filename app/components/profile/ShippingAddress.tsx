@@ -88,8 +88,8 @@ const ShippingAddress = () => {
 
     return (
         <div className="flex flex-col gap-sm flex-1 w-full">
-            { loading ? "Loading..." : 
-                (<h2 className="text-md text-[var(--primary)]">Shipping Address</h2>)
+            { loading ? (<p className="px-sm">Loading...</p>) : 
+                (<h2 className="text-md text-[var(--primary)] px-sm">Shipping Address</h2>)
             }
             <form 
                 onSubmit={(e) => {
@@ -111,8 +111,8 @@ const ShippingAddress = () => {
                     onChange={(e) => setAddress2(e.target.value)}
                 />
 
-                <div className="flex w-full gap-sm items-center">
-                    <div className="w-full max-w-[50%]">
+                <div className="flex sm:flex-row flex-col w-full gap-sm items-center">
+                    <div className="w-full sm:max-w-[50%]">
                         <InputField
                             label="City / District"
                             id="city"
@@ -120,7 +120,7 @@ const ShippingAddress = () => {
                             onChange={(e) => setCity(e.target.value)}
                         />
                     </div>
-                    <div className="w-full max-w-[50%]">
+                    <div className="w-full sm:max-w-[50%]">
                         <InputField
                             label="State / Province"
                             id="state"
@@ -130,8 +130,8 @@ const ShippingAddress = () => {
                     </div>
                 </div>
 
-                <div className="flex w-full gap-sm items-center">
-                    <div className="w-full max-w-[50%]">
+                <div className="flex sm:flex-row flex-col w-full gap-sm items-center">
+                    <div className="w-full sm:max-w-[50%]">
                         <InputField
                             label="Zip / Postal Code"
                             id="zip-code"
@@ -139,7 +139,7 @@ const ShippingAddress = () => {
                             onChange={(e) => setZipcode(e.target.value)}
                         />
                     </div>
-                    <div className="w-full max-w-[50%]">
+                    <div className="w-full sm:max-w-[50%]">
                         <InputField
                             label="Country"
                             id="country"
