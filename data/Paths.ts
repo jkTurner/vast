@@ -9,5 +9,6 @@ export const Paths: PathType[] = [
     { path: '/blog', name: 'blog' },
     { path: '/about', name: 'about' },
     { path: '/contact', name: 'contact' },
+    // { path: '/cart', name: 'cart' },
     // { path: '/testing', name: 'test' },
 ];

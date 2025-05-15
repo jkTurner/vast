@@ -295,3 +295,14 @@
   color: #5b6479;
   margin-top: 12px;
 }
+
+/* remove */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}

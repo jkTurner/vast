@@ -10,6 +10,9 @@ import SignUpModal from '../(auth)/modals/SignUpModal'
 import SignInModal from '../(auth)/modals/SignInModal'
 import UserMenu from './UserMenu'
 import { useUser } from '@/hooks/useUser'
+// import CartMenu from '../ui/cart/CartMenu'
+import dynamic from 'next/dynamic'
+const CartMenu = dynamic(() => import('../ui/cart/CartMenu'), { ssr: false })
 
 const Header = () => {
 
@@ -47,9 +50,9 @@ const Header = () => {
 			<VastLogo />
 
 			{/* desktop nav */}
-			<div className="hidden md:flex gap-xl items-center justify-center">
+			<div className="hidden md:flex gap-md items-center justify-center">
 				<Navbar color="var(--primary)" />
-
+				<CartMenu />
 				{user ? (
 					<div className="relative">
 						<UserMenu />
