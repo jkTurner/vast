@@ -1,12 +1,13 @@
-import { AvatarImage, ProductImage } from "@/data/mockup/MockupImage";
+import { AvatarImage } from "@/data/mockup/MockupImage";
 import HeroBanner from "./components/banners/HeroBanner";
 import ProductCard from "./components/ui/cards/ProductCard";
 import SectionHeader from "./components/ui/section-header/SectionHeader";
-import { LoremText } from "@/data/mockup/MockupData";
+// import { LoremText } from "@/data/mockup/MockupData";
 import ValueCard from "./components/ui/cards/ValueCard";
 import LatestBlogBanner from "./components/banners/LatestBlogBanner";
 import TestimonialCardClient from "./components/ui/cards/testimonial/TestimonialCardClient";
 import SignOutModal from "./components/(auth)/modals/SignOutModals";
+import { ProductData } from "@/data/mockup/ProductData";
 
 export default async function Home(props: {
     searchParams: Promise<{ logout?: string }>;
@@ -23,9 +24,9 @@ export default async function Home(props: {
         {/* Product Section */}
         <SectionHeader sectionName="Products" />
         <div className="cardsContainer">
-            <ProductCard image={ProductImage.image001} name={"Product 001"} price={"$35.99"} detail={LoremText.set10} />
-            <ProductCard image={ProductImage.image002} name={"Product 002"} price={"$30.99"} detail={LoremText.set10} />
-            <ProductCard image={ProductImage.image003} name={"Product 003"} price={"$45.99"} detail={LoremText.set10} />
+            {ProductData.map((item) => (
+                <ProductCard key={item.id} name={item.name} id={item.id} image={item.image} price={item.price} detail={item.detail} />
+            ))}
         </div>
 
         {/* Value Section */}
