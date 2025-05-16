@@ -163,6 +163,13 @@
     background-color: var(--secondary);
     padding: var(--spacing-sm);
   }
+
+  @media (width < 640px) {
+    p {
+      font-size: var(--text-xs);
+      /* color: red; */
+    }  
+  }
   
 }
 
@@ -304,5 +311,6 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 input[type='number'] {
+  appearance: textfield;
   -moz-appearance: textfield;
 }

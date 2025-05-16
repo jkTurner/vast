@@ -59,7 +59,7 @@ const ContactForm = () => {
                         onChange={(e) => setName(e.target.value)}
                         required
                         className="text-[var(--textLight)] border-b border-[var(--textKill)]
-                            focus:outline-none focus:border-[var(--primary)] flex-1 py-1"
+                            focus:outline-none focus:border-[var(--primary)] flex-1 py-1 max-sm:text-xs"
                     />
                     <input 
                         type="email"
@@ -68,12 +68,12 @@ const ContactForm = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                         className="text-[var(--textLight)] border-b border-[var(--textKill)]
-                            focus:outline-none focus:border-[var(--primary)] flex-1 py-1"
+                            focus:outline-none focus:border-[var(--primary)] flex-1 py-1 max-sm:text-xs"
                     />
 
                     <div className="flex items-center gap-sm">
 
-                        <label className="text-[var(--textLight)] text-sm">
+                        <label className="text-[var(--textLight)] text-sm max-sm:text-xs">
                             Topic:
                         </label>
 
@@ -83,7 +83,7 @@ const ContactForm = () => {
                             onChange={(e) => setTopic(e.target.value)}
                             required
                             className="text-[var(--textLight)] broder-b border-[var(--textKill)] 
-                                focus:outline-none focus:border-[var(--primary)] flex-1 py-1 bg-transparent"
+                                focus:outline-none focus:border-[var(--primary)] flex-1 py-1 bg-transparent max-sm:text-xs"
                             >
                                 <option value="General Inquiry">General Inquiry</option>
                                 <option value="Order Question">Order Question</option>
@@ -99,16 +99,16 @@ const ContactForm = () => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
-                        className="text-[var(--textLight)] bg-[var(--bgMain)] min-h-[160px] p-sm resize-none focus:outline-none"
+                        className="text-[var(--textLight)] bg-[var(--bgMain)] min-h-[160px] p-sm resize-none focus:outline-none max-sm:text-xs"
                     />
                     
                     <span className="text-sm text-[var(--textLight)]">
-                        to: <a href="mailto:support@vast-original.com" className="">support@vast-original.com</a>
+                        to: <a href="mailto:support@vast-original.com" className="max-sm:text-xs">support@vast-original.com</a>
                     </span>
                     {status && <p className="text-sm text-[var(--accent)]">{status}</p>}
                     <button
                         type="submit"
-                        className="bg-[var(--primary)] text-[var(--secondary)] cursor-pointer px-4 py-2 hover:bg-[var(--accent)] text-sm"
+                        className="bg-[var(--primary)] text-[var(--secondary)] cursor-pointer px-4 py-2 hover:bg-[var(--accent)] text-sm max-sm:text-xs"
                     >
                         Send
                     </button>

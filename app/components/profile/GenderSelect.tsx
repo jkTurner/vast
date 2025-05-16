@@ -25,7 +25,7 @@ const GenderSelect = ({ gender, setGender }: GenderSelectProps) => {
 
   return (
     <div ref={dropdownRef} className="w-52 relative">
-        <label className="block mb-xxs text-[var(--textLight)] font-semibold text-sm mr">Gender</label>
+        <label className="block mb-xxs text-[var(--textLight)] font-semibold text-sm">Gender</label>
         <button
             type="button"
             onClick={toggleDropdown}

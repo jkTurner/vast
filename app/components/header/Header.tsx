@@ -78,7 +78,8 @@ const Header = () => {
 			)}
 
 			{/* mobile nav */}
-			<button onClick={toggleMenu} className="md:hidden cursor-pointer p-sm">
+			<button onClick={toggleMenu} className="md:hidden flex gap-xxs items-center cursor-pointer p-sm">
+				<CartMenu />
 				<HamburgerIcon size={32} />
 			</button>
 

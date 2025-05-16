@@ -89,7 +89,7 @@ const ShippingAddress = () => {
     return (
         <div className="flex flex-col gap-sm flex-1 w-full">
             { loading ? (<p className="px-sm">Loading...</p>) : 
-                (<h2 className="text-md text-[var(--primary)] px-sm">Shipping Address</h2>)
+                (<h2 className="text-sm text-[var(--primary)] px-sm">Shipping Address</h2>)
             }
             <form 
                 onSubmit={(e) => {
