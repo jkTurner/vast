@@ -5,16 +5,20 @@ import InputField from "../ui/form/InputField";
 import MainButton from "../ui/buttons/MainButton";
 import { supabaseClientBrowser } from "@/utils/supabase/client";
 
-interface ShippingAddress {
-    address_line_1: string;
-    address_line_2: string;
-    city: string;
-    state: string;
-    zipcode: string;
-    country: string;
+// interface ShippingAddress {
+//     address_line_1: string;
+//     address_line_2: string;
+//     city: string;
+//     state: string;
+//     zipcode: string;
+//     country: string;
+// }
+
+interface ShippingAddressProps {
+    saveButton? : boolean;
 }
 
-const ShippingAddress = () => {
+const ShippingAddress = ({ saveButton = true }: ShippingAddressProps) => {
 
     const [address1, setAddress1] = useState("");
     const [address2, setAddress2] = useState("");
@@ -149,14 +153,16 @@ const ShippingAddress = () => {
                     </div>
                 </div>
 
-                <div className="self-end flex gap-sm items-center">
-                    { status && (
-                        <p>{status}</p>
-                    )}
-                    <div>
-                        <MainButton name="Save" type="submit" />
+                { saveButton && (
+                    <div className="self-end flex gap-sm items-center">
+                        { status && (
+                            <p>{status}</p>
+                        )}
+                        <div>
+                            <MainButton name="Save" type="submit" />
+                        </div>
                     </div>
-                </div>
+                )}
                 
             </form>
         </div>

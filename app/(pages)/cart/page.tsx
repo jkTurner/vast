@@ -22,6 +22,16 @@ export default function CartPage () {
 
     const totalPrice = hydrated ? getTotalPrice().toFixed(2) : '...';
 
+    const getShippingCost = (label: string) => {
+        const match = label.match(/\$(\d+(\.\d+)?)/);
+        return match ? parseFloat(match[1]) :0;
+    };
+
+    const shippingCost = hydrated ? getShippingCost(method) : 0;
+    const grandTotal = hydrated
+        ? (getTotalPrice() + shippingCost).toFixed(2)
+        : '...';
+
     return (
         <div className="w-full max-w-[var(--desktop)] min-h-[50vh]">
             
@@ -62,16 +72,19 @@ export default function CartPage () {
             )}
             <div className="w-full flex md:flex-row flex-col gap-sm mt-sm px-sm">
                 <div className="md:max-w-[60%] w-full">
-                    <ShippingAddress />
+                    <ShippingAddress saveButton={false} />
                 </div>
                 <div className="flex flex-col gap-sm flex-1 w-full">
                     <h2 className="text-sm text-[var(--primary)] px-sm">Check Out Details</h2>
                     <div className="flex-1 flex flex-col gap-sm w-full bg-[var(--secondary)] p-sm">
+                        <div className="flex justify-between w-full">
+                            <h4>Sub Total:</h4>
+                            {totalPrice}
+                        </div>
                         <ShippingMethod method={method} setMethod={setMethod} />
-                        <h4>Total:</h4>
                         <div className="flex justify-between w-full border-b-1 border-[var(--textKill)] pb-xs">
                             <h4 className="">Grand Total:</h4>
-                            {totalPrice}
+                            {grandTotal}
                         </div>
                         <div className="self-end">
                             <MainButton name="Comfirm & Pay" />
