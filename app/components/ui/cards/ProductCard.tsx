@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, image, name, price, detai
                 </div>
                 <div className="self-end">
                     {/* <MainButton name="Add to Cart" weight="font-light" /> */}
-                    <AddToCartButton id={id} name={name} price={price} image={image} />
+                    <AddToCartButton id={id} price={price} />
                 </div>
                 {/* <div className="self-end">
                     <Link href={`/shop/${name}`}>
