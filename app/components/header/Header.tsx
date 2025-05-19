@@ -12,6 +12,7 @@ import UserMenu from './UserMenu'
 import { useUser } from '@/hooks/useUser'
 // import CartMenu from '../ui/cart/CartMenu'
 import dynamic from 'next/dynamic'
+import { syncWithServerType, useCart } from '@/hooks/zustand/useCart'
 const CartMenu = dynamic(() => import('../ui/cart/CartMenu'), { ssr: false })
 
 const Header = () => {
@@ -21,9 +22,20 @@ const Header = () => {
 
 	const { data: user, refetch } = useUser();
 
+	// const syncWithServer = useCart((state) => syncWithServer);
+	const syncWithServer: syncWithServerType = useCart((state) => state.syncWithServer);
+	const [hydrated, setHydrated] = useState(false);
+
 	const toggleMenu = () => {
 		setIsMenuOpen(prev => !prev);
 	}
+
+	// syncing cart with server
+	useEffect(() => {
+		if (user?.id) {
+			syncWithServer(user.id).then(() => setHydrated(true));
+		}
+	}, [user, syncWithServer, hydrated])
 
 	// handle mobile menu visibility
 	useEffect(() => {

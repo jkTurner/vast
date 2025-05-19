@@ -15,7 +15,7 @@ export const ProductData = [
 		id: "set002",
 		name: "Glossilla",
 		slug: "glossilla",
-		price: 39.99,
+		price: 49.99,
 		detail:
 		"Designed to deliver a sleek, polished finish. Our gloss pomade provides high shine with a flexible hold that won’t weigh your hair down.",
 		quality: ["Medium Hold", "High Shine"],
